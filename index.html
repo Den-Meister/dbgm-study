@@ -7,29 +7,20 @@
 <title>Doing Business in Global Markets — Study Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme: dark;
-  --bg:#14110f;
-  --bg2:#1c1815;
-  --card:#221d19;
-  --card2:#2a241f;
-  --ink:#f2ece4;
-  --ink-soft:#c9bfb3;
-  --muted:#9a8f81;
-  --terra:#d9744f;
-  --terra-soft:#e6987a;
+  --bg:#14110f;--bg2:#1c1815;--card:#221d19;--card2:#2a241f;
+  --ink:#f2ece4;--ink-soft:#c9bfb3;--muted:#9a8f81;
+  --terra:#d9744f;--terra-soft:#e6987a;--terra-bright:#ff9d6e;
   --line:#3a322b;
-  --blue:#5aa9c9;
-  --blue-bg:#16262c;
-  --yellow:#e0b24a;
-  --yellow-bg:#2b2411;
-  --green:#7bbf7b;
-  --green-bg:#16241a;
+  --blue:#5aa9c9;--blue-bg:#16262c;
+  --yellow:#e0b24a;--yellow-bg:#2b2411;
+  --green:#7bbf7b;--green-bg:#16241a;
+  --moon:#8fa6d8;--moon-bg:#171a26;
   --radius:14px;
 }
-/* Keep colors dark even if the browser/OS is in light mode (iOS Safari auto-invert guard) */
 @media (prefers-color-scheme: light){
   :root{
     --bg:#14110f;--bg2:#1c1815;--card:#221d19;--card2:#2a241f;--ink:#f2ece4;
@@ -38,123 +29,87 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:'DM Sans',system-ui,sans-serif;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1000px;margin:0 auto;padding:0 18px 80px}
-header.top{
-  padding:34px 18px 20px;max-width:1000px;margin:0 auto;
-}
+header.top{padding:34px 18px 18px;max-width:1000px;margin:0 auto}
 .kicker{color:var(--terra);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem}
 h1{font-family:'Playfair Display',serif;font-weight:800;font-size:2.15rem;line-height:1.12;margin:.25em 0 .1em}
-.sub{color:var(--ink-soft);font-size:1.02rem;max-width:70ch}
-.examflag{
-  margin-top:16px;background:linear-gradient(180deg,#2b1a12,#241611);
-  border:1px solid var(--terra);border-radius:var(--radius);padding:12px 16px;
-  color:var(--terra-soft);font-weight:500;font-size:.95rem
-}
-.examflag b{color:#ffd9c8}
+.sub{color:var(--ink-soft);font-size:1.02rem;max-width:72ch}
+.legend{margin-top:12px;font-size:.85rem;color:var(--muted)}
 
-/* Tabs */
-nav.tabs{
-  position:sticky;top:0;z-index:20;background:rgba(20,17,15,.92);
-  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
-  display:flex;gap:4px;overflow-x:auto;padding:8px 18px;max-width:1000px;margin:0 auto;
-  scrollbar-width:none;
-}
+nav.tabs{position:sticky;top:0;z-index:20;background:rgba(20,17,15,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:8px 18px;max-width:1000px;margin:0 auto;scrollbar-width:none}
 nav.tabs::-webkit-scrollbar{display:none}
-.tab-btn{
-  flex:0 0 auto;background:transparent;border:1px solid transparent;color:var(--muted);
-  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;padding:9px 14px;
-  border-radius:10px;cursor:pointer;white-space:nowrap;transition:.15s
-}
+.tab-btn{flex:0 0 auto;background:transparent;border:1px solid transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;padding:9px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;transition:.15s}
 .tab-btn:hover{color:var(--ink)}
-.tab-btn.active{background:var(--card2);color:var(--terra-soft);border-color:var(--line)}
+.tab-btn.active{background:var(--card2);color:var(--terra-bright);border-color:var(--line)}
 .panel{display:none;animation:fade .25s ease}
 .panel.active{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-/* Big idea banner */
-.banner{
-  background:linear-gradient(135deg,var(--card2),var(--card));
-  border:1px solid var(--line);border-left:4px solid var(--terra);
-  border-radius:var(--radius);padding:18px 20px;margin:26px 0 20px
-}
+.banner{background:linear-gradient(135deg,var(--card2),var(--card));border:1px solid var(--line);border-left:4px solid var(--terra);border-radius:var(--radius);padding:18px 20px;margin:24px 0 20px}
 .banner .lab{color:var(--terra);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .banner h2{font-family:'Playfair Display',serif;margin:.15em 0 .1em;font-size:1.5rem;font-weight:700}
 .banner p{margin:.3em 0 0;color:var(--ink-soft)}
 
 h3{font-family:'Playfair Display',serif;font-weight:700;font-size:1.28rem;margin:32px 0 6px;color:var(--ink)}
 h4{font-size:1.02rem;margin:20px 0 6px;color:var(--terra-soft);font-weight:700}
-p{margin:.5em 0}
-.lead{color:var(--ink-soft)}
-strong{color:#fff}
-.muted{color:var(--muted)}
+p{margin:.5em 0}.lead{color:var(--ink-soft)}
+strong{color:#fff}.muted{color:var(--muted)}
 
-/* Card grid */
+/* Name emphasis — a calm label that ties a name to its idea (not a highlighter) */
+.k{color:var(--terra-bright);font-weight:700}
+.namebadge{display:inline-block;background:#251a13;color:var(--terra-bright);font-weight:800;font-size:.9rem;letter-spacing:.01em;padding:3px 11px;border-radius:8px;margin-bottom:9px;border:1px solid #4a3324}
+
 .grid{display:grid;gap:14px;margin:16px 0}
 .grid.c2{grid-template-columns:repeat(2,1fr)}
 .grid.c3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:720px){.grid.c2,.grid.c3{grid-template-columns:1fr}}
-.card{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:15px 17px
-}
-.card h5{margin:0 0 6px;font-size:1rem;color:#fff;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px}
+.card h5{margin:0 0 6px;font-size:1.02rem;color:#fff;font-weight:700}
 .card p,.card ul{margin:.35em 0;font-size:.95rem;color:var(--ink-soft)}
-.card .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--terra);margin-bottom:4px}
+.card .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
+.sowhat{margin-top:9px;padding-top:8px;border-top:1px dashed var(--line);font-size:.88rem;color:var(--terra-soft)}
+.sowhat b{color:var(--terra-bright)}
 
-ul,ol{padding-left:1.25em}
-li{margin:.25em 0}
+ul,ol{padding-left:1.25em}li{margin:.25em 0}
 .def{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:12px 15px;margin:10px 0}
-.def b{color:var(--terra-soft)}
+.def b{color:var(--terra-bright)}
 
-/* Callouts */
 .box{border-radius:12px;padding:13px 16px;margin:14px 0;border:1px solid}
-.applied{background:var(--blue-bg);border-color:#26525f}
-.applied .h{color:var(--blue);font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
-.trap{background:var(--yellow-bg);border-color:#5a4a17}
-.trap .h{color:var(--yellow);font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
-.global{background:var(--green-bg);border-color:#2f5233}
-.global .h{color:var(--green);font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
-.outside{background:#2a1414;border-color:#6b2b2b}
-.outside .h{color:#e08a8a;font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
+.applied{background:var(--blue-bg);border-color:#26525f}.applied .h{color:var(--blue);font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
+.trap{background:var(--yellow-bg);border-color:#5a4a17}.trap .h{color:var(--yellow);font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
+.global{background:var(--green-bg);border-color:#2f5233}.global .h{color:var(--green);font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
+.night{background:var(--moon-bg);border-color:#2c3450}.night .h{color:var(--moon);font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
+.outside{background:#2a1414;border-color:#6b2b2b}.outside .h{color:#e08a8a;font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
 
-/* Practice */
-details.practice{
-  background:var(--card);border:1px solid var(--line);border-left:4px solid var(--terra);
-  border-radius:12px;padding:4px 16px;margin:12px 0
-}
-details.practice summary{
-  cursor:pointer;font-weight:600;padding:11px 0;list-style:none;color:var(--ink);outline:none
-}
+details.practice{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--terra);border-radius:12px;padding:4px 16px;margin:12px 0}
+details.practice summary{cursor:pointer;font-weight:600;padding:11px 0;list-style:none;color:var(--ink);outline:none}
 details.practice summary::-webkit-details-marker{display:none}
 details.practice summary::before{content:"▸ ";color:var(--terra);font-weight:700}
 details.practice[open] summary::before{content:"▾ "}
-details.practice .qtype{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--terra);background:#2a1d15;border:1px solid var(--line);
-  padding:2px 7px;border-radius:20px;margin-right:8px;vertical-align:middle}
+.qtype{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);background:#2a1d15;border:1px solid var(--line);padding:2px 7px;border-radius:20px;margin-right:8px;vertical-align:middle}
 .answer{border-top:1px dashed var(--line);margin-top:4px;padding:12px 0 14px;color:var(--ink-soft)}
 .answer .lab{color:var(--green);font-weight:700;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
 .check{color:var(--muted);font-size:.9rem;margin-top:8px}
 
 table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.92rem}
 th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
-th{background:var(--card2);color:var(--terra-soft);font-weight:700}
-td{color:var(--ink-soft)}
+th{background:var(--card2);color:var(--terra-soft);font-weight:700}td{color:var(--ink-soft)}
+
+.tmpl{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:8px 14px;margin:10px 0}
+.tmpl summary{cursor:pointer;font-weight:700;color:var(--terra-soft);padding:8px 0;list-style:none}
+.tmpl summary::-webkit-details-marker{display:none}
+.tmpl summary::before{content:"▸ ";color:var(--terra)}
+.tmpl[open] summary::before{content:"▾ "}
+.tmpl .body{padding:2px 0 12px;color:var(--ink-soft)}
 
 .footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
-.pill{display:inline-block;background:var(--card2);border:1px solid var(--line);border-radius:20px;
-  padding:3px 11px;font-size:.78rem;color:var(--ink-soft);margin:2px 4px 2px 0}
-.reset{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;
-  padding:5px 10px;font-size:.8rem;cursor:pointer;margin-top:10px}
+.pill{display:inline-block;background:var(--card2);border:1px solid var(--line);border-radius:20px;padding:3px 11px;font-size:.78rem;color:var(--ink-soft);margin:2px 4px 2px 0}
+.reset{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:.8rem;cursor:pointer;margin-top:10px}
 .reset:hover{color:var(--ink)}
 mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
+.tstep{display:flex;gap:12px;align-items:flex-start;margin:10px 0}
+.tstep .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--terra);color:#1a120d;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.85rem}
 </style>
 </head>
 <body>
@@ -162,10 +117,8 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
 <header class="top">
   <div class="kicker">EDB222G · Doing Business in Global Markets · Prof. Moskovicz</div>
   <h1>Study Hub</h1>
-  <p class="sub">Teach-then-produce prep for your written Certámenes. Everything here is drawn from the class decks. Anything not from your materials is tagged <span style="color:#e08a8a">⧉ Outside</span>.</p>
-  <div class="examflag" id="examflag">
-    <b>First Certamen — individual, written — 01/Sept (tomorrow).</b> Scope = the three sessions so far: Strategy foundations (11 Aug), International Trade (18 Aug), Free Trade &amp; Protectionism (25 Aug). Read a block, then <b>do the practice cold</b> before revealing.
-  </div>
+  <p class="sub">A teach-then-produce guide for the written Certámenes. All content is drawn from the class decks. Anything not from the course materials is tagged <span style="color:#e08a8a">⧉ Outside</span>.</p>
+  <p class="legend">In the author cards, the labelled name sits with its idea so the two stick together. <span class="k">Orange</span> marks a term worth recalling by name.</p>
 </header>
 
 <nav class="tabs" id="tabs">
@@ -173,6 +126,8 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
   <button class="tab-btn" data-p="a">A · Strategy Foundations</button>
   <button class="tab-btn" data-p="b">B · International Trade</button>
   <button class="tab-btn" data-p="c">C · Free Trade &amp; Protectionism</button>
+  <button class="tab-btn" data-p="sim">Simulated Questions</button>
+  <button class="tab-btn" data-p="last">Last Read</button>
 </nav>
 
 <div class="wrap">
@@ -182,24 +137,27 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
   <div class="banner">
     <div class="lab">How to use this</div>
     <h2>Understand it, then produce it — don't just read.</h2>
-    <p>Recognition (reading, nodding) collapses under exam pressure. The skill that transfers is <strong>producing an answer cold</strong>. So for every block: read the teaching cards once, then open the practice questions and write your answer <em>before</em> revealing the model. Being wrong here = being right tomorrow.</p>
+    <p>Recognition (reading, nodding) collapses under exam pressure. The skill that transfers is <strong>producing an answer cold</strong>. For every block: read the teaching cards once, then open the practice and write your answer <em>before</em> revealing the model. Being wrong here is how you get it right in the exam.</p>
   </div>
 
-  <h3>What the professor rewards</h3>
+  <h3>What the grader rewards</h3>
   <div class="grid c3">
-    <div class="card"><span class="tag">Count</span><h5>Count the parts first</h5><p>If a question has a framework with N components, your answer needs all N. "Name the 3 reasons firms need strategy" → three labeled reasons.</p></div>
-    <div class="card"><span class="tag">Label</span><h5>Label every part</h5><p>Write <em>"1.", "Point:", "Positioning:"</em>. Graders tick named components — make them findable. Don't bury them in prose.</p></div>
-    <div class="card"><span class="tag">Name</span><h5>Name a specific</h5><p>Attach an author, model, country, or example to each part (Ricardo, Heckscher-Ohlin, Qatar oil, French cheese). Named facts score.</p></div>
+    <div class="card"><span class="tag">Count</span><h5>Count the parts first</h5><p>If a framework has N components, your answer needs all N. "Name the 3 reasons firms need strategy" → three labeled reasons.</p></div>
+    <div class="card"><span class="tag">Label</span><h5>Label every part</h5><p>Write <em>"1.", "Point:", "Positioning:"</em>. Graders tick named components — make them findable, not buried in prose.</p></div>
+    <div class="card"><span class="tag">Name</span><h5>Name a specific</h5><p>Attach a name to each part — an author, model, country, or example (<span class="k">Ricardo</span>, <span class="k">Heckscher-Ohlin</span>, Qatar oil, French cheese). Named facts score.</p></div>
   </div>
 
-  <div class="box global"><span class="h">🌍 This professor's flavor</span>
-  <p>He repeatedly frames the course as <strong>social science, not exact science</strong>: "not all the quantifiable is relevant and not all the relevant can be quantified," data is usually biased/partial, and it's worth analyzing the <em>alternatives a firm discarded</em>, not just the decision it took. He loves analogies (a company as a living thing; political parties ≈ companies) and cites authors by name and year. Expect definitions, short essays, and compare/contrast — not calculations.</p></div>
+  <div class="box global"><span class="h">🌍 The professor's flavor</span>
+  <p>He frames the course as <strong>social science, not exact science</strong>: "not all the quantifiable is relevant and not all the relevant can be quantified," data is usually biased/partial, and it's worth analysing the <em>alternatives a firm discarded</em>, not just the decision taken. He loves analogies (a company as a living thing; political parties ≈ companies) and cites authors by name and year. Expect definitions, short essays, and compare/contrast — not calculations.</p></div>
 
   <div class="box trap"><span class="h">⚠️ The one trap</span>
   <p>His "kindly reminder" warns against exactly the answer that dumps everything without explaining. Write <mark>structured, labeled, specific</mark> — not a wall of everything you know.</p></div>
 
+  <h3>How the tabs work</h3>
+  <p class="lead"><strong>A / B / C</strong> teach each block with produce-first practice. <strong>Simulated Questions</strong> = 20 exam-style prompts to answer cold. <strong>Last Read</strong> = a calm pass that settles your nerves by walking you back through what you already know.</p>
+
   <h3>Course facts (from the syllabus)</h3>
-  <p><span class="pill">Participation 20%</span><span class="pill">1st Certamen (written) 01/Sept — 20%</span><span class="pill">2nd Certamen 20/Oct — 20%</span><span class="pill">Final (group presentation) 26/Nov — 40%</span><span class="pill">75% attendance mandatory</span></p>
+  <p><span class="pill">Participation 20%</span><span class="pill">1st Certamen (individual, written) 20%</span><span class="pill">2nd Certamen 20%</span><span class="pill">Final (group presentation) 40%</span><span class="pill">75% attendance mandatory</span></p>
 
   <button class="reset" onclick="if(confirm('Clear saved tab + open-practice memory?')){try{localStorage.clear()}catch(e){}location.reload()}">Reset saved progress</button>
 </section>
@@ -207,35 +165,35 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
 <!-- ================= BLOCK A ================= -->
 <section class="panel" id="a">
   <div class="banner">
-    <div class="lab">Block A · 11 August</div>
+    <div class="lab">Block A</div>
     <h2>Strategy &amp; International Business Foundations</h2>
-    <p>What "international business" and "strategy" actually mean, how strategy differs from tactics, the author definitions, and the frameworks for describing and locating strategy.</p>
+    <p>What "international business" and "strategy" mean, how strategy differs from tactics, the author definitions, and the frameworks for describing and locating strategy.</p>
   </div>
 
   <h3>Core definitions (memorize the shape, say them your way)</h3>
   <div class="def"><b>International</b> — relating to or affecting two or more nations.</div>
-  <div class="def"><b>Business</b> — an occupation, profession, or trade; the purchase and sale of goods/services in an attempt to make a profit; a profit-seeking enterprise.</div>
+  <div class="def"><b>Business</b> — an occupation, profession, or trade; the purchase and sale of goods/services to make a profit; a profit-seeking enterprise.</div>
   <div class="def"><b>International business</b> — any business that operates across international borders. At its most basic, the sale of goods and services between countries — but other forms also exist.</div>
-  <div class="def"><b>Corporate strategy</b> — a unique, long-term plan or framework designed to gain a competitive advantage over other market participants while delivering on customer/client and stakeholder promises. It guides organizational decisions (hiring, new products, entering new markets).</div>
-  <div class="def"><b>International business strategy</b> — plans that guide commercial transactions between entities in different countries; the plans/policies of private companies (not governments) to achieve an overall goal — e.g. increased profits.</div>
+  <div class="def"><b>Corporate strategy</b> — a unique, long-term plan/framework designed to gain competitive advantage over other market participants while delivering on customer/client and stakeholder promises. Guides decisions like hiring, new products, entering markets.</div>
+  <div class="def"><b>International business strategy</b> — plans guiding commercial transactions between entities in different countries; the plans/policies of private companies (not governments) to achieve an overall goal — e.g. increased profits.</div>
 
   <h3>Strategy vs. Tactics</h3>
   <div class="grid c2">
-    <div class="card"><span class="tag">Strategy</span><h5>The overall plan</h5><p>The means by which individuals or organizations achieve their objectives; the overall plan for deploying resources to establish a favorable position. Long-term. (Military root: the science and art of command applied to the overall conduct of warfare.)</p></div>
+    <div class="card"><span class="tag">Strategy</span><h5>The overall plan</h5><p>The means by which people or organizations achieve their objectives; the overall plan for deploying resources to establish a favorable position. Long-term. (Military root: the science and art of command applied to the overall conduct of warfare.)</p></div>
     <div class="card"><span class="tag">Tactic</span><h5>The specific maneuver</h5><p>A maneuver or action calculated to achieve some end; a scheme for a specific maneuver. Near-future.</p></div>
   </div>
   <div class="box applied"><span class="h">📌 The 3 manager types (his analogy)</span>
-  <p><strong>Creatives</strong> — "Let's go to Shanghai." <strong>Decision-makers</strong> — "OK, let's go tomorrow." <strong>Executives</strong> — which transport, the route, the timing. (Idea → decision → execution.)</p></div>
+  <p><span class="k">Creatives</span> — "Let's go to Shanghai." <span class="k">Decision-makers</span> — "OK, let's go tomorrow." <span class="k">Executives</span> — which transport, the route, the timing. (Idea → decision → execution.)</p></div>
 
   <h4>Characteristics of strategic decisions</h4>
-  <p>They are <strong>important</strong>, they involve a <strong>significant commitment of resources</strong>, and they are <strong>not easily reversible</strong>.</p>
+  <p>They are <strong>important</strong>, involve a <strong>significant commitment of resources</strong>, and are <strong>not easily reversible</strong>.</p>
 
-  <h3>Strategy defined by authors (name = year = one idea)</h3>
+  <h3>Strategy defined by authors — each name paired with its one idea</h3>
   <div class="grid c2">
-    <div class="card"><span class="tag">Porter (2000)</span><h5>Unique position</h5><p>Strategy is the creation of a unique and valuable position, involving a different set of activities.</p></div>
-    <div class="card"><span class="tag">Collis &amp; Rustag (2008)</span><h5>State it simply</h5><p>Most executives can't articulate the objective, scope, and advantage of their business in a simple statement — and if they can't, neither can anyone else.</p></div>
-    <div class="card"><span class="tag">Grant (2010)</span><h5>Practice-driven</h5><p>Business strategy's evolution has been driven more by the practical needs of business than by theory. In the 1950s–60s, execs struggled to coordinate decisions and keep control in ever larger, more complex firms.</p></div>
-    <div class="card"><span class="tag">Dess, McNamara, Eisner &amp; Lee (2021)</span><h5>Strategic Management</h5><p>The <strong>analyses, decisions, and actions</strong> an organization undertakes to create and sustain competitive advantages.</p></div>
+    <div class="card"><span class="namebadge">Porter (2000)</span><h5>Unique position</h5><p>Strategy is the creation of a unique and valuable position, involving a different set of activities.</p><p class="sowhat"><b>Cite for:</b> strategy = choosing a <em>different</em> set of activities, not just doing the same ones better.</p></div>
+    <div class="card"><span class="namebadge">Collis &amp; Rustag (2008)</span><h5>State it simply</h5><p>Most executives can't articulate the objective, scope, and advantage of their business in a simple statement — and if they can't, neither can anyone else.</p><p class="sowhat"><b>Cite for:</b> the test of a real strategy is whether it fits one clear sentence.</p></div>
+    <div class="card"><span class="namebadge">Grant (2010)</span><h5>Practice-driven</h5><p>Business strategy's evolution is driven more by the practical needs of business than by theory. In the 1950s–60s, execs struggled to coordinate decisions and keep control in ever larger, more complex firms.</p><p class="sowhat"><b>Cite for:</b> strategy theory follows business practice — it grew from managers' real coordination problems.</p></div>
+    <div class="card"><span class="namebadge">Dess, McNamara, Eisner &amp; Lee (2021)</span><h5>Strategic Management</h5><p>The <strong>analyses, decisions, and actions</strong> an organization undertakes to create and sustain competitive advantages.</p><p class="sowhat"><b>Cite for:</b> the go-to definition of strategic management — analyses → decisions → actions.</p></div>
   </div>
 
   <h3>Framework — Dess et al.'s two elements of Strategic Management</h3>
@@ -245,21 +203,21 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
       <td><strong>Analyses</strong> → strategic goals (vision, mission, objectives) + internal &amp; external environment.<br>
       <strong>Decisions</strong> → What industries should we compete in? How should we compete in them?<br>
       <strong>Actions</strong> → implement: allocate resources, design the organization.</td>
-      <td><strong>2.1</strong> How should we compete to create competitive advantage? (low-cost vs. differentiation/premium — or a combination.)<br>
-      <strong>2.2</strong> How to make that advantage <em>unique, valuable, hard to copy/substitute</em> — i.e. <strong>sustainable (perdurable)</strong>, not temporary.</td>
+      <td><strong>2.1</strong> How to compete to create competitive advantage? (low-cost vs. differentiation/premium — or a combination.)<br>
+      <strong>2.2</strong> How to make that advantage <em>unique, valuable, hard to copy/substitute</em> — i.e. <span class="k">sustainable (perdurable)</span>, not temporary.</td>
     </tr>
   </table>
 
   <h3>Why firms need strategy (3 roles)</h3>
   <div class="grid c3">
-    <div class="card"><span class="tag">1</span><h5>Decision support</h5><p>Improves the <strong>quality</strong> of decision making.</p></div>
-    <div class="card"><span class="tag">2</span><h5>Coordination &amp; communication</h5><p>Creates <strong>consistency and unity</strong>.</p></div>
-    <div class="card"><span class="tag">3</span><h5>Target</h5><p>Improves <strong>performance</strong> by setting high aspirations.</p></div>
+    <div class="card"><h5>1 · Decision support</h5><p>Improves the <strong>quality</strong> of decision making.</p></div>
+    <div class="card"><h5>2 · Coordination &amp; communication</h5><p>Creates <strong>consistency and unity</strong>.</p></div>
+    <div class="card"><h5>3 · Target</h5><p>Improves <strong>performance</strong> by setting high aspirations.</p></div>
   </div>
 
   <h3>Framework — Describing strategy: Positioning vs. Direction</h3>
   <table>
-    <tr><th>Strategy as POSITIONING (competing for the present)</th><th>Strategy as DIRECTION (preparing for the future)</th></tr>
+    <tr><th><span class="k">Positioning</span> — competing for the present</th><th><span class="k">Direction</span> — preparing for the future</th></tr>
     <tr>
       <td><strong>Where are we competing?</strong> product-market scope, geographical scope, vertical scope.<br><strong>How are we competing?</strong> the basis of our competitive advantage.</td>
       <td><strong>What do we want to become?</strong> vision.<br><strong>What do we want to achieve?</strong> mission, performance goals.<br><strong>How will we get there?</strong> development guidelines; capex/R&amp;D priorities; growth modes — organic growth, M&amp;A, alliances.</td>
@@ -269,109 +227,135 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
   <h3>Framework — Sources of superior profitability</h3>
   <p class="lead">Earning a rate of profit above the cost of capital comes from two sources:</p>
   <div class="grid c2">
-    <div class="card"><span class="tag">Corporate strategy</span><h5>Industry attractiveness</h5><p><em>Which businesses should we be in?</em></p></div>
-    <div class="card"><span class="tag">Business strategy</span><h5>Competitive advantage</h5><p><em>How should we compete?</em></p></div>
+    <div class="card"><span class="namebadge">Industry attractiveness</span><h5>Corporate strategy</h5><p><em>Which businesses should we be in?</em></p></div>
+    <div class="card"><span class="namebadge">Competitive advantage</span><h5>Business strategy</h5><p><em>How should we compete?</em></p></div>
   </div>
 
   <div class="box applied"><span class="h">📌 Where strategy actually lives (3 places)</span>
-  <p><strong>1.</strong> In the heads of the CEO &amp; senior managers (the ideal, rarely achieved). <strong>2.</strong> In their articulations — speeches &amp; documents (but firms never disclose confidential next steps). <strong>3.</strong> In the decisions through which strategy is enacted (which outsiders can't fully read). <em>Lesson: if you're not at the decision table, you see only a partial view, so your conclusions are only partially right.</em></p></div>
+  <p><strong>1.</strong> In the heads of the CEO &amp; senior managers (ideal, rarely achieved). <strong>2.</strong> In their articulations — speeches &amp; documents (but firms never disclose confidential next steps). <strong>3.</strong> In the decisions through which strategy is enacted (which outsiders can't fully read). <em>Lesson: if you're not at the decision table, you see a partial view — so your conclusions are only partially right.</em></p></div>
 
   <div class="box applied"><span class="h">📌 Two signature analogies</span>
-  <p><strong>Company as a living thing (10 stages):</strong> 1 Newborn (foundation) · 2 Childhood (consolidation) · 3 Growth (development) · 4 Seeking a partner (alliances) · 5 Engagement (agreements/contracts) · 6 Marriage (M&amp;A) · 7 Sons (split/spin-off) · 8 Maturity (profits fixed) · 9 Separation (divestiture/exit) · 10 Passing away (hostile M&amp;A, bankruptcy).<br>
-  <strong>Political parties ≈ companies:</strong> spread ideas = products/services; conquer voters = market share; leadership struggle = managers &amp; directors; alliances with rivals = M&amp;A; members' interest vs. party = the <strong>Agency Problem</strong>; splits = divestitures; ex-leaders found rivals = former-CEO entrepreneurship.</p></div>
+  <p><strong>Company as a living thing (10 stages):</strong> 1 Newborn (foundation) · 2 Childhood (consolidation) · 3 Growth (development) · 4 Seeking a partner (alliances) · 5 Engagement (agreements/contracts) · 6 Marriage (<span class="k">M&amp;A</span>) · 7 Sons (split/spin-off) · 8 Maturity (profits fixed) · 9 Separation (divestiture/exit) · 10 Passing away (hostile M&amp;A, bankruptcy).<br>
+  <strong>Political parties ≈ companies:</strong> spread ideas = products/services; conquer voters = market share; leadership struggle = managers &amp; directors; alliances with rivals = M&amp;A; members' interest vs. party = the <span class="k">Agency Problem</span>; splits = divestitures; ex-leaders found rivals = former-CEO entrepreneurship.</p></div>
+
+  <h3>🧠 Recall check — cover the screen, produce these cold</h3>
+  <details class="practice"><summary><span class="qtype">Recall check</span>The named sets from this block — can you produce each without looking?</summary>
+    <div class="answer"><span class="lab">Answers</span>
+    <p><strong>3 reasons firms need strategy:</strong> decision support · coordination &amp; communication · target.<br>
+    <strong>4 authors → one idea:</strong> Porter (2000) unique position · Collis &amp; Rustag (2008) state it simply · Grant (2010) practice-driven · Dess et al. (2021) analyses/decisions/actions.<br>
+    <strong>Dess — 3 processes:</strong> analyses → decisions → actions.<br>
+    <strong>Positioning vs Direction:</strong> where/how we compete now vs what we want to become &amp; how we get there.<br>
+    <strong>3 traits of a strategic decision:</strong> important · resource-heavy · not easily reversible.</p></div>
+  </details>
 
   <h3>Produce it — practice (write before you reveal)</h3>
   <details class="practice"><summary><span class="qtype">Recall</span>Define international business strategy and say how it differs from corporate strategy.</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p><strong>International business strategy</strong> = plans guiding commercial transactions between entities in <em>different countries</em>; the policies of private firms (not governments) to reach an overall goal such as increased profits. <strong>Corporate strategy</strong> = a firm's unique long-term framework to gain competitive advantage while meeting customer &amp; stakeholder promises; it guides decisions like hiring, new products, market entry. Difference: corporate strategy is the firm's overall long-term direction; international business strategy specifically governs its cross-border transactions.</p>
-    <div class="check">☐ Both defined ☐ "different countries" / cross-border named ☐ "private companies not governments" ☐ the difference stated explicitly</div></div>
+    <p><span class="k">International business strategy</span> = plans guiding commercial transactions between entities in <em>different countries</em>; the policies of private firms (not governments) to reach an overall goal such as increased profits. <span class="k">Corporate strategy</span> = a firm's unique long-term framework to gain competitive advantage while meeting customer &amp; stakeholder promises; it guides decisions like hiring, new products, market entry. Difference: corporate strategy is the firm's overall long-term direction; international business strategy specifically governs its cross-border transactions.</p>
+    <div class="check">☐ Both defined ☐ "different countries"/cross-border ☐ "private companies not governments" ☐ difference stated</div></div>
   </details>
   <details class="practice"><summary><span class="qtype">Recall</span>Name the 3 reasons firms need strategy — labeled.</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p><strong>1. Decision support</strong> — improves the quality of decision making. <strong>2. Coordination &amp; communication</strong> — creates consistency and unity. <strong>3. Target</strong> — improves performance by setting high aspirations.</p>
-    <div class="check">☐ All 3 present ☐ Each labeled ☐ Each paired with its effect</div></div>
+    <p><strong>1. Decision support</strong> — improves quality of decision making. <strong>2. Coordination &amp; communication</strong> — creates consistency and unity. <strong>3. Target</strong> — improves performance by setting high aspirations.</p>
+    <div class="check">☐ All 3 ☐ Each labeled ☐ Each paired with its effect</div></div>
   </details>
   <details class="practice"><summary><span class="qtype">Compare</span>Distinguish strategy from tactics.</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p><strong>Strategy</strong> = the overall, long-term plan for deploying resources to establish a favorable position — the means to achieve objectives. <strong>Tactic</strong> = a specific, near-term maneuver or scheme calculated to achieve some end. Strategy sets the favorable position; tactics are the individual moves within it. Optional hook: strategic decisions are important, resource-heavy, and not easily reversible.</p>
-    <div class="check">☐ Strategy = overall/long-term/position ☐ Tactic = specific/near-term maneuver ☐ relationship stated</div></div>
+    <p><strong>Strategy</strong> = the overall, long-term plan for deploying resources to establish a favorable position — the means to achieve objectives. <strong>Tactic</strong> = a specific, near-term maneuver calculated to achieve some end. Strategy sets the favorable position; tactics are the moves within it. Hook: strategic decisions are important, resource-heavy, not easily reversible.</p>
+    <div class="check">☐ Strategy = overall/long-term/position ☐ Tactic = specific/near-term ☐ relationship stated</div></div>
   </details>
-  <details class="practice"><summary><span class="qtype">Integration</span>Using Dess et al. (2021), explain what strategic management is and why some firms outperform others.</summary>
+  <details class="practice"><summary><span class="qtype">Integration</span>Using <span class="k">Dess et al. (2021)</span>, explain what strategic management is and why some firms outperform others.</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p>Dess et al. (2021): strategic management = the <strong>analyses, decisions, and actions</strong> a firm undertakes to create and sustain competitive advantage. <em>Element 1</em> — three ongoing processes: analyses (vision/mission/objectives + internal &amp; external environment), decisions (which industries; how to compete), actions (allocate resources, design the organization). <em>Element 2</em> — the essence is <strong>why some firms outperform others</strong>: (2.1) how to compete to create advantage — low-cost vs. differentiation, or both; (2.2) how to make that advantage unique, valuable, and hard to copy — i.e. <strong>sustainable (perdurable)</strong>, not temporary.</p>
-    <div class="check">☐ 3 processes labeled ☐ 2 fundamental questions ☐ "sustainable/perdurable" named ☐ author-year cited</div></div>
+    <p>Dess et al. (2021): strategic management = the <strong>analyses, decisions, and actions</strong> a firm undertakes to create and sustain competitive advantage. <em>Element 1</em> — three processes: analyses (vision/mission/objectives + internal &amp; external environment), decisions (which industries; how to compete), actions (allocate resources, design the organization). <em>Element 2</em> — the essence is <strong>why some firms outperform others</strong>: (2.1) how to compete — low-cost vs. differentiation, or both; (2.2) how to make the advantage unique, valuable, hard to copy — <span class="k">sustainable (perdurable)</span>, not temporary.</p>
+    <div class="check">☐ 3 processes labeled ☐ 2 fundamental questions ☐ "sustainable/perdurable" ☐ author-year cited</div></div>
   </details>
 </section>
 
 <!-- ================= BLOCK B ================= -->
 <section class="panel" id="b">
   <div class="banner">
-    <div class="lab">Block B · 18 August</div>
+    <div class="lab">Block B</div>
     <h2>International Trade</h2>
     <p>The models that explain <em>why</em> countries trade, the empirical patterns, and the actors and legal framework of international trade.</p>
   </div>
 
-  <div class="def"><b>International trade</b> — foreign trade: the exchange of goods, services, capital and intellectual/personal rights between individuals of different states. Two senses: (1) the turnover of goods between countries; (2) also the turnover of services, capital, labor and information.</div>
+  <div class="def"><b>International trade</b> — foreign trade: the exchange of goods, services, capital and intellectual/personal rights between individuals of different states. Two senses: (1) turnover of goods between countries; (2) also turnover of services, capital, labor and information.</div>
   <div class="def"><b>Trade pattern</b> — the composition of a country's imports and exports, and the volume of its trade with the rest of the world, which is likely to change over time.</div>
   <div class="def"><b>Trade pattern theories</b> — two theories explain patterns of trade: <b>comparative advantage</b> and <b>increasing returns to scale</b>.</div>
 
   <h3>Framework — the models of international trade (the spine of this block)</h3>
   <table>
     <tr><th>Model</th><th>Author(s)</th><th>Core idea</th></tr>
-    <tr><td><strong>Absolute advantage</strong></td><td>Adam Smith (1776, <em>Wealth of Nations</em>)</td><td>Reply to mercantilism (grow wealth by pushing exports, blocking imports). Unfettered trade benefits <em>both</em> importer and exporter — each produces what it makes best.</td></tr>
-    <tr><td><strong>Comparative advantage</strong></td><td>Ricardo</td><td>Two-country, two-good example: countries gain from trade <em>even if one has an absolute advantage in both</em>. Specialize in the good with the lowest <strong>opportunity cost</strong> and export it. Predicts specialization &amp; direction of trade.</td></tr>
-    <tr><td><strong>Heckscher-Ohlin</strong></td><td>Heckscher &amp; Ohlin</td><td>Best-known alternative to Ricardo. Comparative advantage comes from differing <strong>factor endowments</strong> and how intensively sectors use them. <em>H-O theorem:</em> a country exports the good that uses intensively the factor it has in relative abundance.</td></tr>
-    <tr><td><strong>New trade theory</strong></td><td>Krugman (1979)</td><td>Most world trade is between <em>similar</em> developed countries and much of it is <strong>intra-industry</strong> (two-way, same industry). Monopolistic firms each make a different variety + economies of scale; consumers have a "love for variety." Countries trade varieties even with no comparative advantage.</td></tr>
-    <tr><td><strong>Recent advances</strong></td><td>Melitz (2003)</td><td>Micro-foundations: firms are <strong>heterogeneous</strong> in productive efficiency; models which firms decide to export, affecting industry dynamics, aggregate productivity, and wages.</td></tr>
+    <tr><td><strong>Absolute advantage</strong></td><td><span class="k">Adam Smith (1776)</span><br><em>Wealth of Nations</em></td><td>Reply to mercantilism (grow wealth by pushing exports, blocking imports). Unfettered trade benefits <em>both</em> importer and exporter — each produces what it makes best.</td></tr>
+    <tr><td><strong>Comparative advantage</strong></td><td><span class="k">Ricardo</span></td><td>Two-country, two-good example: countries gain <em>even if one has an absolute advantage in both</em>. Specialize in the good with the lowest <span class="k">opportunity cost</span> and export it. Predicts specialization &amp; direction of trade.</td></tr>
+    <tr><td><strong>Heckscher-Ohlin</strong></td><td><span class="k">Heckscher &amp; Ohlin</span></td><td>Best-known alternative to Ricardo. Advantage comes from differing <span class="k">factor endowments</span> and how intensively sectors use them. <em>H-O theorem:</em> a country exports the good using intensively the factor it has in relative abundance.</td></tr>
+    <tr><td><strong>New trade theory</strong></td><td><span class="k">Krugman (1979)</span></td><td>Most world trade is between <em>similar</em> developed countries and much is <span class="k">intra-industry</span> (two-way, same industry). Monopolistic firms each make a variety + economies of scale; consumers have a "love for variety." Countries trade varieties even with no comparative advantage.</td></tr>
+    <tr><td><strong>Recent advances</strong></td><td><span class="k">Melitz (2003)</span></td><td>Micro-foundations: firms are <span class="k">heterogeneous</span> in productive efficiency; models which firms export, affecting industry dynamics, aggregate productivity, and wages.</td></tr>
   </table>
+  <p class="sowhat"><b>Use in an answer:</b> name the author + the one distinguishing idea; if asked <em>which</em> model fits a given case, apply the rule in the box below.</p>
   <div class="box trap"><span class="h">⚠️ Which model for which trade?</span>
-  <p><strong>New trade theory</strong> best explains trade <em>between similar developed countries</em> and intra-industry trade (the majority of world trade). <strong>Comparative-advantage</strong> models best explain trade between <em>developed and less-developed</em> countries. The gravity equation can be derived from <em>both</em>.</p></div>
+  <p><span class="k">New trade theory</span> best explains trade <em>between similar developed countries</em> and intra-industry trade (most of world trade). <span class="k">Comparative-advantage</span> models best explain <em>developed ↔ less-developed</em> trade. The gravity equation can be derived from <em>both</em>.</p></div>
 
   <h3>Empirical patterns — Blonigen &amp; Wilson (2012), 4 findings</h3>
   <div class="grid c2">
-    <div class="card"><span class="tag">1</span><h5>Phenomenal growth</h5><p>Trade is growing at a phenomenal rate.</p></div>
-    <div class="card"><span class="tag">2</span><h5>Few dominant players</h5><p>Trade is dominated by relatively few countries, who tend to stay dominant.</p></div>
-    <div class="card"><span class="tag">3</span><h5>Uneven but stable</h5><p>Growth rates differ a lot across products, yet the relative sizes of product markets stay stable.</p></div>
-    <div class="card"><span class="tag">4</span><h5>Shift to Asia</h5><p>Over 40 years, major flows shifted from <strong>US–Europe</strong> to <strong>Asia–US</strong>.</p></div>
+    <div class="card"><h5>1 · Phenomenal growth</h5><p>Trade is growing at a phenomenal rate.</p></div>
+    <div class="card"><h5>2 · Few dominant players</h5><p>Trade is dominated by relatively few countries, who tend to stay dominant.</p></div>
+    <div class="card"><h5>3 · Uneven but stable</h5><p>Growth rates differ a lot across products, yet relative product-market sizes stay stable.</p></div>
+    <div class="card"><h5>4 · Shift to Asia</h5><p>Over 40 years, major flows shifted from <span class="k">US–Europe</span> to <span class="k">Asia–US</span>.</p></div>
   </div>
 
-  <h4>International trade patterns — the 8 terms he lists</h4>
-  <p><span class="pill">Trade Flow</span><span class="pill">International Economy</span><span class="pill">Comparative Advantage</span><span class="pill">Foreign Investment</span><span class="pill">Foreign Subsidiary</span><span class="pill">Institutional Change</span><span class="pill">Risk Premium</span><span class="pill">Foreign Economic Policy</span></p>
+  <h3>International trade patterns — the 8 dimensions, grouped so they stick</h3>
+  <p class="lead">He lists eight terms flat and unexplained. They're far easier to hold if you group them by the <em>question each one answers</em> — three little families instead of eight loose words.</p>
+  <div class="grid c3">
+    <div class="card"><h5>What moves — the flows</h5><p><span class="k">Trade Flow</span> — the direction &amp; volume of goods moving.<br><span class="k">International Economy</span> — the global system those flows run through.</p></div>
+    <div class="card"><h5>Why &amp; how firms go abroad</h5><p><span class="k">Comparative Advantage</span> — the driver of who exports what.<br><span class="k">Foreign Investment</span> — capital crossing borders.<br><span class="k">Foreign Subsidiary</span> — a firm's arm operating in another country.</p></div>
+    <div class="card"><h5>The environment around trade</h5><p><span class="k">Institutional Change</span> — evolving rules &amp; bodies.<br><span class="k">Foreign Economic Policy</span> — a government's stance on trade.<br><span class="k">Risk Premium</span> — the extra return demanded for cross-border risk.</p></div>
+  </div>
+  <p class="muted" style="font-size:.85rem"><span style="color:#e08a8a;font-weight:700">⧉ Outside</span> — the eight terms are his (from the slide); the one-line meanings are plain-language memory aids I added to make them stick, not slide definitions.</p>
 
   <div class="box applied"><span class="h">📌 Globalization to the consumer</span>
-  <p>More choices, generally lower prices (not always), and a blurred national identity of products: a Volvo owned by China's Geely, a Jaguar owned by India's Tata, a Dodge from Italy's Fiat, foreign brands built in the US. The point: brands and production are decoupled across borders.</p></div>
+  <p>More choices, generally lower prices (not always), and a blurred national identity of products: a Volvo owned by China's <span class="k">Geely</span>, a Jaguar owned by India's <span class="k">Tata</span>, a Dodge from Italy's <span class="k">Fiat</span>, foreign brands built in the US. The point: brands and production are decoupled across borders.</p></div>
 
   <h3>Actors of international trade (the legal-framework slide)</h3>
   <div class="grid c3">
-    <div class="card"><h5>States</h5><p>Key, indisputable creators of international law. Most are both <em>de jure</em> (in law) and <em>de facto</em> (in reality) states. Developed vs. developing countries take different approaches.</p></div>
-    <div class="card"><h5>Corporations</h5><p>Often multinationals; profit-driven; lobby states &amp; international organizations to protect their interests — with the same accountability/legitimacy questions raised about NGOs.</p></div>
-    <div class="card"><h5>International organizations</h5><p>Intergovernmental orgs / NGOs formed between governments; decide by one-state-one-vote, consensus, or weighted voting.</p></div>
-    <div class="card"><h5>Regional organizations</h5><p>Regional bodies coordinating trade among neighboring states.</p></div>
-    <div class="card"><h5>Juridical &amp; physical persons</h5><p>Individuals increasingly hold rights and responsibilities under international law (e.g. human-rights law).</p></div>
-    <div class="card"><h5>Arbitration associations</h5><p>Handle dispute settlement — often preferred because foreign arbitration awards enjoy a single, near-universal enforcement regime.</p></div>
+    <div class="card"><span class="namebadge">States</span><p>Key, indisputable creators of international law. Most are both <em>de jure</em> (in law) and <em>de facto</em> (in reality). Developed vs. developing take different approaches.</p></div>
+    <div class="card"><span class="namebadge">Corporations</span><p>Often multinationals; profit-driven; lobby states &amp; international organizations to protect their interests — with the same accountability questions raised about NGOs.</p></div>
+    <div class="card"><span class="namebadge">International organizations</span><p>Intergovernmental orgs / NGOs formed between governments; decide by one-state-one-vote, consensus, or weighted voting.</p></div>
+    <div class="card"><span class="namebadge">Regional organizations</span><p>Regional bodies coordinating trade among neighboring states.</p></div>
+    <div class="card"><span class="namebadge">Juridical &amp; physical persons</span><p>Individuals increasingly hold rights and responsibilities under international law (e.g. human-rights law).</p></div>
+    <div class="card"><span class="namebadge">Arbitration associations</span><p>Handle dispute settlement — often preferred because foreign arbitral awards enjoy a single, near-universal enforcement regime.</p></div>
   </div>
   <div class="box applied"><span class="h">📌 International commercial contracts</span>
-  <p>A contract is "international" when two or more states conclude an agreement (e.g. the <strong>Vienna 1980</strong> UN Convention on Contracts for the International Sale of Goods; the <strong>Hague Principles 2015</strong>). Parties may choose the governing law; if they don't, a court applies conflict-of-laws rules. <strong>Arbitration</strong> is common because foreign arbitral decisions have an almost inclusive enforcement regime.</p></div>
+  <p>A contract is "international" when two or more states conclude an agreement (e.g. the <span class="k">Vienna 1980</span> UN Convention on Contracts for the International Sale of Goods; the <span class="k">Hague Principles 2015</span>). Parties may choose the governing law; if they don't, a court applies conflict-of-laws rules. <span class="k">Arbitration</span> is common because foreign arbitral decisions have an almost inclusive enforcement regime.</p></div>
+
+  <h3>🧠 Recall check — cover the screen, produce these cold</h3>
+  <details class="practice"><summary><span class="qtype">Recall check</span>The named sets from this block — can you produce each without looking?</summary>
+    <div class="answer"><span class="lab">Answers</span>
+    <p><strong>5 trade models → author:</strong> absolute (Smith 1776) · comparative (Ricardo) · factor endowments (Heckscher-Ohlin) · new trade / varieties (Krugman 1979) · firms (Melitz 2003).<br>
+    <strong>Blonigen &amp; Wilson (2012), 4 findings:</strong> phenomenal growth · few dominant players · uneven-but-stable · shift US–Europe → Asia–US.<br>
+    <strong>8 trade patterns, 3 families:</strong> flows (trade flow, international economy) · firms abroad (comparative advantage, foreign investment, foreign subsidiary) · environment (institutional change, foreign economic policy, risk premium).<br>
+    <strong>Actors of trade:</strong> states · corporations · international orgs/NGOs · regional orgs · juridical/physical persons · arbitration associations.</p></div>
+  </details>
 
   <h3>Produce it — practice</h3>
   <details class="practice"><summary><span class="qtype">Compare</span>Explain absolute vs. comparative advantage, with the authors.</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p><strong>Absolute advantage (Smith, 1776)</strong>: a country should produce and export what it makes most efficiently; trade benefits both sides — a reply to mercantilism. <strong>Comparative advantage (Ricardo)</strong>: even if one country is absolutely better at <em>both</em> goods, both still gain by specializing in the good with the lower <strong>opportunity cost</strong> and trading for the other. Key difference: comparative advantage shows gains exist <em>even without</em> an absolute edge, and it predicts specialization and the direction of trade.</p>
-    <div class="check">☐ Smith 1776 ☐ Ricardo ☐ "opportunity cost" ☐ "even if one has absolute advantage in both" ☐ difference stated</div></div>
+    <p><span class="k">Absolute advantage (Smith, 1776)</span>: a country should produce and export what it makes most efficiently; trade benefits both sides — a reply to mercantilism. <span class="k">Comparative advantage (Ricardo)</span>: even if one country is absolutely better at <em>both</em> goods, both still gain by specializing in the good with the lower <span class="k">opportunity cost</span> and trading. Key difference: comparative advantage shows gains exist <em>even without</em> an absolute edge, and predicts specialization and direction of trade.</p>
+    <div class="check">☐ Smith 1776 ☐ Ricardo ☐ "opportunity cost" ☐ "even if absolute advantage in both" ☐ difference stated</div></div>
   </details>
-  <details class="practice"><summary><span class="qtype">Recall</span>State the Heckscher-Ohlin theorem in one sentence.</summary>
+  <details class="practice"><summary><span class="qtype">Explain</span>How does the Heckscher-Ohlin model explain trade?</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p>A country will export the good that uses <strong>relatively intensively</strong> the factor of production in which that country is <strong>relatively abundant</strong> — comparative advantage coming from differing factor endowments.</p>
-    <div class="check">☐ "abundant factor" ☐ "used intensively" ☐ ties to factor endowments</div></div>
+    <p>Comparative advantage arises from differing <span class="k">factor endowments</span>. The H-O theorem: a country exports the good that uses <strong>intensively</strong> the factor of production in which it is <strong>relatively abundant</strong> (and imports the other). It differs from Ricardo by locating advantage in <em>what a country has</em>, not in productivity differences alone.</p>
+    <div class="check">☐ factor endowments ☐ abundant factor used intensively ☐ contrast to Ricardo</div></div>
   </details>
-  <details class="practice"><summary><span class="qtype">Apply</span>Why do two similar developed countries (say Germany &amp; France) trade cars with each other? Which model explains it?</summary>
+  <details class="practice"><summary><span class="qtype">Apply</span>Why do two similar developed countries trade cars with each other? Which model explains it?</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p><strong>Krugman's new trade theory (1979)</strong>. They have similar factor endowments, so classic comparative advantage doesn't predict much trade. But firms produce <em>different varieties</em> of cars under economies of scale, and consumers have a "love for variety." So the two countries engage in <strong>intra-industry</strong> (two-way) trade — each importing the other's varieties — gaining from more variety and larger-scale production.</p>
-    <div class="check">☐ Krugman/new trade theory ☐ intra-industry / varieties ☐ economies of scale ☐ love for variety</div></div>
+    <p><span class="k">Krugman's new trade theory (1979)</span>. Similar factor endowments mean classic comparative advantage predicts little trade. But firms produce <em>different varieties</em> under economies of scale, and consumers have a "love for variety." So they engage in <span class="k">intra-industry</span> (two-way) trade — each importing the other's varieties — gaining from more variety and larger-scale production.</p>
+    <div class="check">☐ Krugman/new trade theory ☐ intra-industry/varieties ☐ economies of scale ☐ love for variety</div></div>
   </details>
-  <details class="practice"><summary><span class="qtype">Recall</span>List Blonigen &amp; Wilson's 4 findings — labeled.</summary>
+  <details class="practice"><summary><span class="qtype">Recall</span>What are Blonigen &amp; Wilson's 4 findings on international trade?</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p><strong>1.</strong> Trade is growing at a phenomenal rate. <strong>2.</strong> Trade is dominated by relatively few countries, who stay dominant. <strong>3.</strong> Product growth rates differ widely, yet relative market sizes stay stable. <strong>4.</strong> Over 40 years, flows shifted from US–Europe to Asia–US.</p>
+    <p><strong>1.</strong> Trade grows at a phenomenal rate. <strong>2.</strong> Dominated by relatively few countries, who stay dominant. <strong>3.</strong> Product growth rates differ widely, yet relative market sizes stay stable. <strong>4.</strong> Over 40 years, flows shifted from US–Europe to Asia–US.</p>
     <div class="check">☐ All 4 ☐ numbered ☐ #4 names the Asia–US shift</div></div>
   </details>
 </section>
@@ -379,53 +363,52 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
 <!-- ================= BLOCK C ================= -->
 <section class="panel" id="c">
   <div class="banner">
-    <div class="lab">Block C · 25 August</div>
+    <div class="lab">Block C</div>
     <h2>Free Trade, Trade Blocs &amp; Protectionism</h2>
     <p>The levels of economic integration, why free trade helps (and hurts), the major blocs, and the toolkit of protectionism.</p>
   </div>
 
-  <h3>Framework — levels of integration (know the escalating differences)</h3>
-  <table>
-    <tr><th>Free Trade Area</th><th>Customs Union</th><th>Single Market</th></tr>
-    <tr>
-      <td>No tariffs between members. <strong>No</strong> common external tariff (so border checks on country of origin). Each member can negotiate its <strong>own</strong> trade deals.</td>
-      <td>No tariffs between members. <strong>Common external tariff</strong>. Trade deals negotiated for the whole union.</td>
-      <td>No tariffs, <strong>no border checks</strong>. Freedom of movement of goods <em>and people</em>. Common rules and regulations.</td>
-    </tr>
-  </table>
-  <div class="box trap"><span class="h">⚠️ The distinguishing features</span>
-  <p>What separates them: <strong>external tariff</strong> (FTA = none/own deals; Customs Union = common) and <strong>movement + common rules</strong> (only the Single Market adds free movement of people and shared regulation). If asked to compare, structure by those two axes.</p></div>
+  <h3>The integration ladder — why these three are worth knowing</h3>
+  <p class="lead">These aren't a random list of arrangements. They're <strong>three rungs of the same ladder</strong>: each rung keeps everything below it and adds <em>one</em> new thing. Learn the two things that get added as you climb, and you can answer any "distinguish them" question — his favourite way to ask this.</p>
+  <div class="grid c3">
+    <div class="card"><span class="namebadge">Rung 1 · Free Trade Area</span><h5>Drop the tariffs between us</h5><p>No tariffs between members — but each keeps its <strong>own</strong> external tariff and cuts its <strong>own</strong> outside deals. Because the outside walls differ, goods still face <em>origin checks</em> at the border.</p></div>
+    <div class="card"><span class="namebadge">Rung 2 · Customs Union</span><h5>+ one shared outside wall</h5><p>Everything above <strong>plus</strong> a single <strong>common external tariff</strong>, with trade deals negotiated for the whole union. Same outside wall, so the origin checks fall away.</p></div>
+    <div class="card"><span class="namebadge">Rung 3 · Single Market</span><h5>+ people move, one rulebook</h5><p>Everything above <strong>plus</strong> no border checks at all, free movement of goods <em>and people</em>, and common rules and regulations across members.</p></div>
+  </div>
+  <div class="box trap"><span class="h">⚠️ How to answer "distinguish them"</span>
+  <p>Don't describe each in isolation — name the <strong>two things added going up the ladder</strong>: (1) a <span class="k">common external tariff</span> (FTA → Customs Union), then (2) <span class="k">free movement of people + shared rules</span> (Customs Union → Single Market). Two deltas and you've nailed it.</p></div>
 
   <div class="def"><b>Free trade</b> — policies permitting inexpensive imports and exports without tariffs or other trade barriers. A <b>free trade agreement (FTA)</b> is a group of countries agreeing to lower tariffs/barriers to trade more with each other.</div>
-  <h4>What FTAs actually do</h4>
-  <p>Reduce/eliminate tariffs · address behind-the-border barriers · encourage investment · improve rules (e.g. intellectual property) · enhance e-commerce and government procurement.</p>
+  <h4>An FTA reaches further than "no tariffs"</h4>
+  <p>The point to make in an answer: a modern FTA doesn't stop at the tariff line — it reaches <em>behind the border</em>. It reduces/eliminates tariffs, tackles behind-the-border barriers, encourages investment, tightens rules like <span class="k">intellectual property</span>, and opens up e-commerce and government procurement. So "free trade agreement" means <em>deeper economic rule-setting</em>, not just cheaper imports.</p>
 
-  <h3>Benefits of free trade — Pettinger (2019) <span class="muted" style="font-size:.8rem">(8 points)</span></h3>
+  <h3>Benefits of free trade — Pettinger (2019)</h3>
   <div class="grid c2">
-    <div class="card"><span class="tag">1</span><h5>Comparative advantage</h5><p>Specialize where opportunity cost is lower → higher welfare for all.</p></div>
-    <div class="card"><span class="tag">2</span><h5>Trade creation</h5><p>Lower tariffs shift consumption from high-cost to low-cost producers.</p></div>
-    <div class="card"><span class="tag">3</span><h5>Increased exports</h5><p>Lower foreign tariffs → more exports → jobs and growth.</p></div>
-    <div class="card"><span class="tag">4</span><h5>Economies of scale</h5><p>Specializing → larger scale → lower average costs → lower prices.</p></div>
-    <div class="card"><span class="tag">5</span><h5>Increased competition</h5><p>More rivals → cut costs, more efficiency, curbs domestic monopolies.</p></div>
-    <div class="card"><span class="tag">6</span><h5>Engine of growth</h5><p>World trade has grown ~7% a year since 1945.</p></div>
-    <div class="card"><span class="tag">7</span><h5>Use of surplus raw materials</h5><p>Qatar's oil is only valuable with trade; resource-poor Japan needs trade to avoid low GDP.</p></div>
-    <div class="card"><span class="tag">8</span><h5>Tariffs breed inefficiency</h5><p>Protected industries have little incentive to cut costs.</p></div>
+    <div class="card"><h5>1 · Comparative advantage</h5><p>Specialize where opportunity cost is lower → higher welfare for all.</p></div>
+    <div class="card"><h5>2 · Trade creation</h5><p>Lower tariffs shift consumption from high-cost to low-cost producers.</p></div>
+    <div class="card"><h5>3 · Increased exports</h5><p>Lower foreign tariffs → more exports → jobs and growth.</p></div>
+    <div class="card"><h5>4 · Economies of scale</h5><p>Specializing → larger scale → lower average costs → lower prices.</p></div>
+    <div class="card"><h5>5 · Increased competition</h5><p>More rivals → cut costs, more efficiency, curbs domestic monopolies.</p></div>
+    <div class="card"><h5>6 · Engine of growth</h5><p>World trade has grown ~7% a year since 1945.</p></div>
+    <div class="card"><h5>7 · Use of surplus raw materials</h5><p>Qatar's oil is only valuable with trade; resource-poor Japan needs trade to avoid low GDP.</p></div>
+    <div class="card"><h5>8 · Tariffs breed inefficiency</h5><p>Protected industries have little incentive to cut costs.</p></div>
   </div>
 
   <div class="box trap"><span class="h">⚠️ Free trade — the downsides he lists</span>
-  <p>Harmful to the environment · bad working conditions · intellectual-property theft · job outsourcing · degradation of natural resources. (FTA pros/cons framing: <strong>PROS</strong> — growth, lower government spending, technology transfer; <strong>CONS</strong> — outsourcing, poor working conditions, resource degradation.)</p></div>
+  <p>Harmful to the environment · bad working conditions · intellectual-property theft · job outsourcing · degradation of natural resources. (PROS/CONS framing: <strong>PROS</strong> — growth, lower government spending, technology transfer; <strong>CONS</strong> — outsourcing, poor working conditions, resource degradation.)</p></div>
 
-  <h3>Major regional trade agreements <span class="muted" style="font-size:.8rem">(by share of global GDP, per his chart)</span></h3>
+  <h3>Major regional trade agreements <span class="muted" style="font-size:.8rem">(share of global GDP, per his chart)</span></h3>
   <p><span class="pill">RCEP ≈ 30.5%</span><span class="pill">USMCA ≈ 28%</span><span class="pill">EU ≈ 17.9%</span><span class="pill">AfCFTA ≈ 2.9%</span><span class="pill">Mercosur ≈ 2.4%</span></p>
+  <p class="lead"><strong>Memory hook:</strong> the top three are neck-and-neck and dwarf the rest — <span class="k">RCEP</span> (Asia) just ahead of <span class="k">USMCA</span> (North America), then the <span class="k">EU</span>; <span class="k">AfCFTA</span> and <span class="k">Mercosur</span> are a distant tier (~2–3% each). One line to remember: <em>the world's biggest trade bloc by GDP is Asia's, not the West's.</em></p>
   <div class="box applied"><span class="h">📌 RCEP — the headline bloc</span>
-  <p>The <strong>Regional Comprehensive Economic Partnership</strong>: a free trade agreement among <strong>15 Asia-Pacific nations</strong>, officially the biggest trading bloc in history — ~30% of global GDP and population, larger than USMCA and the EU. <strong>India pulled out.</strong> It sets rules on investment, competition, telecommunications, intellectual property, and e-commerce.</p></div>
+  <p>The <span class="k">Regional Comprehensive Economic Partnership</span>: a free trade agreement among <strong>15 Asia-Pacific nations</strong>, officially the biggest trading bloc in history — ~30% of global GDP and population, larger than USMCA and the EU. <span class="k">India pulled out.</span> It sets rules on investment, competition, telecommunications, intellectual property, and e-commerce.</p></div>
 
   <h3>Framework — the protectionist toolkit</h3>
   <div class="grid c2">
-    <div class="card"><span class="tag">Tool 1</span><h5>Tariffs</h5><p>Charged to the importing country; raise the price of imports. Three types: <strong>Scientific</strong> (item-by-item), <strong>Peril-point</strong> (industry-specific — the level beyond which a tariff change seriously harms an industry), <strong>Retaliatory</strong> (response to excessive duties by partners).</p></div>
-    <div class="card"><span class="tag">Tool 2</span><h5>Import quotas</h5><p>Non-tariff barrier limiting the quantity imported over a period. Can prevent <strong>dumping</strong>. An <strong>embargo</strong> (total ban) is the most severe quota.</p></div>
-    <div class="card"><span class="tag">Tool 3</span><h5>Product standards</h5><p>Safety/quality rules that block imports failing internal controls. Example: French raw-milk cheeses aged under 60 days are banned in the US — protecting US producers.</p></div>
-    <div class="card"><span class="tag">Tool 4</span><h5>Government subsidies</h5><p><strong>Direct</strong> (cash payments) or <strong>indirect</strong> (interest-free loans, tax breaks). <strong>Export subsidies</strong> push domestic firms to expand abroad.</p></div>
+    <div class="card"><span class="namebadge">Tool 1 · Tariffs</span><p>Charged to the importing country; raise the price of imports. Three types: <span class="k">Scientific</span> (item-by-item), <span class="k">Peril-point</span> (industry-specific harm threshold), <span class="k">Retaliatory</span> (response to partners' excessive duties).</p></div>
+    <div class="card"><span class="namebadge">Tool 2 · Import quotas</span><p>Non-tariff barrier limiting the quantity imported over a period. Can prevent <span class="k">dumping</span>. An <span class="k">embargo</span> (total ban) is the most severe quota.</p></div>
+    <div class="card"><span class="namebadge">Tool 3 · Product standards</span><p>Safety/quality rules that block imports failing internal controls. Example: French raw-milk cheeses aged under 60 days are banned in the US — protecting US producers.</p></div>
+    <div class="card"><span class="namebadge">Tool 4 · Government subsidies</span><p><span class="k">Direct</span> (cash payments) or <span class="k">indirect</span> (interest-free loans, tax breaks). <span class="k">Export subsidies</span> push domestic firms to expand abroad.</p></div>
   </div>
   <div class="def"><b>Dumping</b> — when foreign firms sell products at artificially low prices (below production cost) in a market, often due to unfair subsidies or overproduction.</div>
 
@@ -438,57 +421,144 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
     </tr>
   </table>
   <div class="box applied"><span class="h">📌 Real-world examples</span>
-  <p>EU Common Agricultural Policy (CAP) tariffs protecting farmers · US tariffs on Chinese tyres · the "Banana Wars." Protectionist-measure counts: China 200–300, the <strong>US over 800</strong>, UK &amp; Germany ~300 each; most measures target China (a "new trade war"). Per Credit Suisse / Global Trade Alert, the <strong>most protectionist country is the US</strong>.</p></div>
+  <p><span class="k">EU Common Agricultural Policy (CAP)</span> tariffs protecting farmers · US tariffs on Chinese tyres · the <span class="k">Banana Wars</span>. Protectionist-measure counts: China 200–300, the <strong>US over 800</strong>, UK &amp; Germany ~300 each; most measures target China (a "new trade war"). Per Credit Suisse / Global Trade Alert, the <strong>most protectionist country is the US</strong>.</p></div>
+
+  <h3>Free trade vs Protectionism — the head-to-head</h3>
+  <p class="lead">The essay contrast worth pre-building: same six dimensions, two columns. If he asks you to weigh them, answer down these rows.</p>
+  <table>
+    <tr><th>Dimension</th><th>Free trade</th><th>Protectionism</th></tr>
+    <tr><td><strong>Goal</strong></td><td>Efficiency &amp; consumer gains through open markets</td><td>Shield domestic industry &amp; jobs</td></tr>
+    <tr><td><strong>Tools</strong></td><td>FTAs, lower tariffs, deeper integration</td><td>Tariffs, quotas, product standards, subsidies</td></tr>
+    <tr><td><strong>Prices</strong></td><td>Lower for consumers</td><td>Higher → inflation, lower real incomes</td></tr>
+    <tr><td><strong>Efficiency</strong></td><td>Rises (comparative advantage, competition)</td><td>Falls (protected firms don't cut costs)</td></tr>
+    <tr><td><strong>Downside</strong></td><td>Outsourcing, environment, IP theft</td><td>Retaliation, a "trade war"</td></tr>
+    <tr><td><strong>Economist verdict</strong></td><td>Favoured — helps growth &amp; welfare</td><td>Harms growth/welfare; justified only narrowly &amp; temporarily</td></tr>
+  </table>
+
+  <h3>🧠 Recall check — cover the screen, produce these cold</h3>
+  <details class="practice"><summary><span class="qtype">Recall check</span>The named sets from this block — can you produce each without looking?</summary>
+    <div class="answer"><span class="lab">Answers</span>
+    <p><strong>Integration ladder — what each rung adds:</strong> Free Trade Area (drop internal tariffs) → Customs Union (+ common external tariff) → Single Market (+ free movement of people &amp; common rules).<br>
+    <strong>4 protectionist tools:</strong> tariffs · import quotas · product standards · government subsidies.<br>
+    <strong>3 tariff types:</strong> scientific · peril-point · retaliatory.<br>
+    <strong>Protectionism — 3 for / 3 against:</strong> for → jobs &amp; industry, infant industry, national security; against → inefficiency, higher prices, retaliation.</p></div>
+  </details>
 
   <h3>Produce it — practice</h3>
   <details class="practice"><summary><span class="qtype">Compare</span>Distinguish a free trade area, a customs union, and a single market.</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p><strong>Free trade area:</strong> no tariffs between members, <em>no</em> common external tariff (so origin checks), each member negotiates its own external deals. <strong>Customs union:</strong> no internal tariffs <em>plus</em> a <strong>common external tariff</strong>, with trade deals negotiated for the whole union. <strong>Single market:</strong> all of the above <em>plus</em> no border checks, <strong>free movement of goods and people</strong>, and common rules and regulations. Axis of escalation: external tariff, then free movement + shared regulation.</p>
-    <div class="check">☐ 3 labeled ☐ external-tariff difference ☐ free movement of people (single market) ☐ escalation logic</div></div>
+    <p><span class="k">Free trade area</span>: no internal tariffs, <em>no</em> common external tariff (origin checks), each member sets its own external deals. <span class="k">Customs union</span>: no internal tariffs <em>plus</em> a <span class="k">common external tariff</span>, deals negotiated for the whole union. <span class="k">Single market</span>: all of that <em>plus</em> no border checks, <span class="k">free movement of goods and people</span>, and common rules. Escalation axes: external tariff, then free movement + shared regulation.</p>
+    <div class="check">☐ 3 labeled ☐ external-tariff difference ☐ free movement of people ☐ escalation logic</div></div>
   </details>
-  <details class="practice"><summary><span class="qtype">Recall</span>Name the 4 protectionist tools; give the 3 tariff types.</summary>
+  <details class="practice"><summary><span class="qtype">Explain</span>What tools can a government use to protect domestic industry, and how does each work?</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p><strong>1. Tariffs</strong> — scientific (item-by-item), peril-point (industry-specific harm threshold), retaliatory (response to partners' duties). <strong>2. Import quotas</strong> (embargo = total ban = most severe). <strong>3. Product standards.</strong> <strong>4. Government subsidies</strong> (direct/indirect; export subsidies).</p>
-    <div class="check">☐ 4 tools labeled ☐ 3 tariff types named ☐ embargo noted as extreme quota</div></div>
+    <p><strong>1. Tariffs</strong> — raise import prices; types: scientific (item-by-item), peril-point (industry harm threshold), retaliatory (response to partners). <strong>2. Import quotas</strong> — cap the quantity imported; an embargo (total ban) is the most severe. <strong>3. Product standards</strong> — safety/quality rules that block failing imports. <strong>4. Government subsidies</strong> — direct (cash) or indirect (loans/tax breaks); export subsidies push firms abroad.</p>
+    <div class="check">☐ 4 tools labeled ☐ 3 tariff types ☐ how each works ☐ embargo as extreme quota</div></div>
   </details>
-  <details class="practice"><summary><span class="qtype">Apply</span>A country bans a cheaper foreign cheese on "safety" grounds. What tool is this, and what's the real effect?</summary>
+  <details class="practice"><summary><span class="qtype">Apply</span>A country bans a cheaper foreign cheese on "safety" grounds. What tool is this, and the real effect?</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p>A <strong>product standard</strong> — a non-tariff protectionist barrier. Framed as safety/quality (his example: French raw-milk cheeses aged under 60 days banned in the US), its real effect is to <strong>block imports and shift volume to domestic producers</strong>, protecting them from cheaper competition.</p>
+    <p>A <span class="k">product standard</span> — a non-tariff protectionist barrier. Framed as safety/quality (his example: French raw-milk cheeses aged under 60 days banned in the US), its real effect is to <strong>block imports and shift volume to domestic producers</strong>.</p>
     <div class="check">☐ names "product standard" ☐ non-tariff barrier ☐ real effect = protect domestic producers</div></div>
   </details>
-  <details class="practice"><summary><span class="qtype">Integration</span>Argue both sides: is protectionism justified? Structure it.</summary>
+  <details class="practice"><summary><span class="qtype">Integration</span>Is protectionism justified? Argue both sides and conclude.</summary>
     <div class="answer"><span class="lab">Model answer</span>
-    <p><strong>For:</strong> protects industry &amp; jobs, shields emerging domestic industries, national security, better balance of trade, defends against unfair competition/dumping. <strong>Against:</strong> economic inefficiency, less consumer choice, higher prices → inflation and lower real incomes, weaker productivity and innovation, and retaliation risk. <strong>Consensus:</strong> economists broadly find protectionism harms growth and welfare while free trade helps — so it's mainly justified as a <em>targeted, temporary</em> defense (infant industry, security), not a general policy.</p>
-    <div class="check">☐ ≥3 "for" ☐ ≥3 "against" ☐ names economist consensus ☐ a reasoned verdict</div></div>
+    <p><strong>For:</strong> protects industry &amp; jobs, shields emerging domestic industries, national security, better balance of trade, defends against unfair competition/dumping. <strong>Against:</strong> economic inefficiency, less consumer choice, higher prices → inflation and lower real incomes, weaker productivity/innovation, retaliation risk. <strong>Consensus:</strong> economists broadly find protectionism harms growth/welfare while free trade helps — so it's justified mainly as a <em>targeted, temporary</em> defense (infant industry, security), not a general policy.</p>
+    <div class="check">☐ ≥3 "for" ☐ ≥3 "against" ☐ economist consensus ☐ a reasoned verdict</div></div>
   </details>
 </section>
 
+<!-- ================= SIMULATED QUESTIONS ================= -->
+<section class="panel" id="sim">
+  <!-- SIMULATED (CERTAMEN 1) START -->
+  <div class="banner">
+    <div class="lab">Mock · scoped to Certamen 1 (Blocks A–C)</div>
+    <h2>Simulated Questions — 20</h2>
+    <p>Twenty prompts written to sound like his actual exam — open definitions, short essays, compare/contrast and applied situations, not flashcard recall. Answer each <strong>cold</strong> and out loud or on paper, then reveal. This set is re-scoped for each Certamen as new material arrives.</p>
+  </div>
+  <div class="box trap"><span class="h">⚠️ How to use</span><p>Cover the answer. Produce a full, <mark>labeled</mark> response before opening. If you can't name the author or the parts, that's the gap — go back to the block.</p></div>
+
+  <details class="practice"><summary><span class="qtype">Q1</span>What is strategy, and how does it differ from a tactic? Illustrate your answer.</summary><div class="answer"><span class="lab">Model</span><p>Strategy = the overall, long-term plan for deploying resources to reach a favourable position/objectives. Tactic = a specific, near-term maneuver within that plan. Illustration: deciding to expand into Asia is strategy; choosing which port and shipping schedule is tactics. Strategic decisions are important, resource-heavy, and hard to reverse.</p><div class="check">☐ both defined ☐ long-term vs near-term ☐ an example ☐ relationship</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q2</span>What is international business, and what is international business strategy?</summary><div class="answer"><span class="lab">Model</span><p>International business = any business operating across international borders (at minimum, selling goods/services between countries; other forms exist). International business strategy = plans guiding commercial transactions between entities in different countries — the policies of private firms (not governments) toward an overall goal such as increased profits.</p><div class="check">☐ IB across borders ☐ IB strategy = cross-border plans ☐ private not government ☐ a goal e.g. profit</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q3</span>Explain what strategic management is according to Dess et al. (2021), and what makes it more than everyday management.</summary><div class="answer"><span class="lab">Model</span><p>The analyses, decisions, and actions a firm undertakes to create and sustain competitive advantage. More than day-to-day management because it's about <em>why some firms outperform others</em>: choosing which industries to compete in and how to build advantages that are unique, valuable and hard to copy — sustainable (perdurable), not temporary.</p><div class="check">☐ author cited ☐ analyses/decisions/actions ☐ outperformance angle ☐ sustainable advantage</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q4</span>Why do firms need a strategy at all? Discuss the roles it plays.</summary><div class="answer"><span class="lab">Model</span><p>Three roles: (1) decision support — raises the quality of decisions; (2) coordination &amp; communication — creates consistency and unity across the firm; (3) target — lifts performance by setting high aspirations. Without it, decisions are inconsistent, uncoordinated and unambitious.</p><div class="check">☐ 3 roles labeled ☐ effect of each ☐ a "why it matters" line</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q5</span>Different authors define strategy differently. Present the views of Porter, Collis &amp; Rustag, and Grant, and note what they share.</summary><div class="answer"><span class="lab">Model</span><p>Porter (2000): a unique &amp; valuable position built on a different set of activities. Collis &amp; Rustag (2008): execs must state objective, scope and advantage simply — if they can't, nobody can. Grant (2010): strategy has evolved driven more by practical business needs than by theory. Shared: strategy is about deliberately positioning the firm to gain and hold advantage.</p><div class="check">☐ 3 authors + views ☐ correct pairing ☐ a common thread</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q6</span>What does it mean for a competitive advantage to be "sustainable" (perdurable), and why do managers care?</summary><div class="answer"><span class="lab">Model</span><p>A sustainable advantage is unique, valuable, and hard for rivals to copy or substitute, so it lasts over a long period rather than being competed away. Managers care because temporary advantages don't produce profits above the cost of capital for long — durability is what keeps a firm outperforming.</p><div class="check">☐ unique/valuable/hard to copy ☐ lasting vs temporary ☐ why it matters (outperformance)</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q7</span>Explain the difference between describing strategy as "positioning" and as "direction."</summary><div class="answer"><span class="lab">Model</span><p>Positioning = competing for the present: where we compete (product-market, geographic, vertical scope) and how we compete (basis of advantage). Direction = preparing for the future: what we want to become (vision), what we want to achieve (mission, goals) and how we'll get there (growth modes — organic, M&amp;A, alliances; capex/R&amp;D priorities).</p><div class="check">☐ positioning = present/where+how ☐ direction = future/vision+path ☐ contrast clear</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q8</span>Where does strategy actually "live" in a company, and why can an outsider only ever see part of it?</summary><div class="answer"><span class="lab">Model</span><p>In three places: the heads of the CEO/senior managers (ideal, rare); their articulations in speeches and documents (which never reveal confidential steps); and the decisions through which strategy is enacted. An outsider isn't at the decision table, sees only the disclosed pieces, and so reaches conclusions that are only partially right — his "social science, not exact science" point.</p><div class="check">☐ 3 places ☐ outsider = partial view ☐ conclusions partly right</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q9</span>What is international trade, and what explains the patterns we observe in it?</summary><div class="answer"><span class="lab">Model</span><p>International/foreign trade = the exchange of goods, services, capital and intellectual/personal rights between individuals of different states. Its patterns (the composition and volume of a country's trade, which shift over time) are explained by two theories: comparative advantage and increasing returns to scale.</p><div class="check">☐ definition ☐ two pattern theories ☐ patterns change over time</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q10</span>Compare the theories of absolute and comparative advantage. Why was Ricardo's insight so powerful?</summary><div class="answer"><span class="lab">Model</span><p>Smith (1776): a country exports what it produces most efficiently — trade benefits both, versus mercantilism. Ricardo: even if one country is better at <em>both</em> goods, both still gain by specializing where the <span class="k">opportunity cost</span> is lower. Ricardo's insight is powerful because it shows trade is mutually beneficial even without any absolute edge, and it predicts what each country will specialize in.</p><div class="check">☐ Smith vs Ricardo ☐ opportunity cost ☐ "even without absolute advantage" ☐ why powerful</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q11</span>How does the Heckscher-Ohlin model explain trade, and how does it differ from Ricardo?</summary><div class="answer"><span class="lab">Model</span><p>H-O locates advantage in <span class="k">factor endowments</span>: a country exports the good that uses intensively the factor it holds in relative abundance. It differs from Ricardo by explaining advantage through <em>what a country is endowed with</em> (capital, labor, land) rather than productivity differences alone.</p><div class="check">☐ factor endowments ☐ abundant factor used intensively ☐ contrast with Ricardo</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q12</span>Why do similar, developed countries trade so much with each other? What does Krugman's new trade theory add that comparative advantage cannot?</summary><div class="answer"><span class="lab">Model</span><p>Because they trade <span class="k">varieties</span> of the same kind of good (intra-industry trade), driven by economies of scale and consumers' "love for variety." Comparative advantage can't explain this — similar endowments imply little trade — so Krugman (1979) adds monopolistic competition + scale to explain the bulk of world trade, which is between similar developed economies.</p><div class="check">☐ intra-industry/varieties ☐ scale + love of variety ☐ what CA can't explain ☐ Krugman</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q13</span>What did Melitz (2003) bring to trade theory, and why does looking at individual firms matter?</summary><div class="answer"><span class="lab">Model</span><p>Melitz added micro-foundations: firms are heterogeneous in productive efficiency, and only the more productive ones choose to export. This matters because trade then reshapes industry dynamics — reallocating toward efficient firms — lifting aggregate productivity and affecting wages, which country-level models miss.</p><div class="check">☐ heterogeneous firms ☐ export decision ☐ productivity/wages effect</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q14</span>Blonigen &amp; Wilson (2012) summarize international trade in a few findings. What are they, and what do they tell us about how trade is changing?</summary><div class="answer"><span class="lab">Model</span><p>(1) Trade grows at a phenomenal rate; (2) it's dominated by a few countries who stay dominant; (3) product growth rates vary widely but relative market sizes stay stable; (4) over 40 years flows shifted from US–Europe to Asia–US. Together: trade is expanding and concentrated, but its centre of gravity has moved toward Asia.</p><div class="check">☐ all 4 ☐ Asia–US shift ☐ an interpretation</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q15</span>Who are the main actors in international trade, and what role does each play in shaping its rules?</summary><div class="answer"><span class="lab">Model</span><p>States (primary creators of international law; de jure &amp; de facto); corporations/multinationals (profit-driven, lobby for favourable rules); international organizations/NGOs (decide by vote, consensus or weighted voting); regional organizations; juridical/physical persons (individuals now hold rights &amp; duties); and arbitration associations (dispute settlement).</p><div class="check">☐ ≥4 actors ☐ a role each ☐ states as rule-makers</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q16</span>When is a commercial contract "international," and how are disputes typically resolved?</summary><div class="answer"><span class="lab">Model</span><p>It's international when two or more states conclude an agreement (e.g. the <span class="k">Vienna 1980</span> CISG; the <span class="k">Hague Principles 2015</span>). Parties may choose the governing law; if they don't, a court applies conflict-of-laws rules. Disputes are commonly resolved by <span class="k">arbitration</span>, favoured because foreign arbitral awards enjoy an almost universal enforcement regime.</p><div class="check">☐ "international" defined ☐ choice of law ☐ arbitration + why</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q17</span>Distinguish a free trade area, a customs union, and a single market. What is added at each step?</summary><div class="answer"><span class="lab">Model</span><p>Free trade area: no internal tariffs, no common external tariff (origin checks), own external deals. Customs union: adds a common external tariff and joint external deals. Single market: adds no border checks, free movement of goods <em>and people</em>, and common rules. The two added steps: a common external tariff, then free movement + shared regulation.</p><div class="check">☐ 3 defined ☐ common external tariff ☐ free movement of people ☐ "what's added" logic</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q18</span>What are the main benefits of free trade? Is free trade always the best policy?</summary><div class="answer"><span class="lab">Model</span><p>Benefits (Pettinger): comparative advantage, trade creation, more exports, economies of scale, more competition, growth (~7%/yr since 1945), use of surplus resources. Not always best: it can harm the environment and working conditions, enable IP theft and outsourcing; and protection is defensible for infant industries, jobs or security. Consensus still favours free trade — so protection should be targeted and temporary.</p><div class="check">☐ ≥4 benefits ☐ ≥2 caveats ☐ consensus ☐ a verdict</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q19</span>A government imposes item-by-item tariffs, blocks a foreign food on "hygiene" grounds, and gives exporters tax breaks. Identify each protectionist tool at work.</summary><div class="answer"><span class="lab">Model</span><p>Item-by-item tariffs = <span class="k">scientific tariffs</span>. The "hygiene" block = a <span class="k">product standard</span> (non-tariff barrier used to shut out imports and protect domestic producers). Tax breaks to exporters = an <span class="k">indirect government subsidy</span>, specifically an export subsidy. All three raise the price or scarcity of foreign goods to favour domestic firms.</p><div class="check">☐ scientific tariff ☐ product standard ☐ export/indirect subsidy ☐ common purpose</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q20</span>What is protectionism, what arguments are made for it, and why do most economists still favour free trade?</summary><div class="answer"><span class="lab">Model</span><p>Protectionism = using tools (tariffs, quotas, product standards, subsidies) to shield domestic producers. Arguments for: protect industry &amp; jobs, infant industries, national security, better balance of trade, defence against dumping/unfair competition. Economists still favour free trade because protection brings inefficiency, higher prices/inflation, less choice, weaker innovation and retaliation — net welfare loss. So protection is justified only narrowly and temporarily.</p><div class="check">☐ definition + tools ☐ ≥3 arguments for ☐ why economists favour free trade ☐ conclusion</div></div></details>
+  <!-- SIMULATED (CERTAMEN 1) END -->
+</section>
+
+<!-- ================= LAST READ ================= -->
+<section class="panel" id="last">
+  <!-- LAST READ START -->
+  <div class="banner">
+    <div class="lab">A calm pass — not notes</div>
+    <h2>Last Read</h2>
+    <p>This tab isn't for cramming — it's for <strong>settling your nerves by recalling what you already know</strong>. Read it slowly twice: <span class="k">🌙 the night before</span> to reassure yourself and then sleep, and <span class="k">☀️ 10–30 min before</span> to walk in calm and clear. Let each line remind you: it's already in there.</p>
+  </div>
+
+  <div class="box night"><span class="h">🌙 The night before — read, breathe, sleep</span>
+  <p>You've built the shape of all three blocks. Tonight isn't for new input — it's for letting it settle. Sleep is when memory consolidates, so the kindest thing you can do for tomorrow's score is rest.</p>
+  <p style="margin-top:8px"><strong>One move carries the whole exam:</strong> for every question — <span class="k">count the parts → label each → name a specific</span>. That single habit turns "I know this" into marks.</p></div>
+
+  <h3>🌙☀️ Recall the spine — you already know this</h3>
+  <p class="lead">Read these three lines and notice how much comes back on its own. That recognition <em>is</em> the reassurance.</p>
+  <div class="box night"><span class="h">🌙 Block A — Strategy</span><p>Strategy is the long-term plan for a favourable position (tactics are the moves within it). You know the authors — Porter, Collis &amp; Rustag, Grant — and Dess et al.: strategy = <strong>analyses, decisions, actions</strong>, aimed at a <em>sustainable</em> advantage. Positioning is the present; direction is the future.</p></div>
+  <div class="box night"><span class="h">🌙 Block B — Trade</span><p>You know <em>why</em> countries trade: absolute advantage (Smith), comparative advantage (Ricardo, opportunity cost), factor endowments (Heckscher-Ohlin), varieties &amp; scale (Krugman), and firms (Melitz). Plus Blonigen &amp; Wilson's shift from US–Europe to Asia–US.</p></div>
+  <div class="box night"><span class="h">🌙 Block C — Free trade &amp; protection</span><p>You know the ladder: free trade area → customs union (+ common wall) → single market (+ people &amp; rules). You know free trade's benefits and the protection toolkit: tariffs, quotas, product standards, subsidies — and dumping.</p></div>
+  <p class="lead">That's the whole exam, and it's already yours. Now you can rest, or walk in.</p>
+
+  <h3>☀️ Right before you go in (10–30 min)</h3>
+  <div class="tstep"><div class="n">1</div><div><strong>Settle.</strong> Breathe. You've recalled the spine above — the material is there. Nerves are just adrenaline, not a knowledge gap.</div></div>
+  <div class="tstep"><div class="n">2</div><div><strong>Read every question first</strong> (2–3 min), mark the command word (<em>define / explain / compare / apply</em>), split time by marks, keep the last few minutes to check each answer has labels and a named specific.</div></div>
+  <div class="tstep"><div class="n">3</div><div><strong>Skeleton before prose.</strong> Count the parts, label each, name a specific. Don't dump everything — a tight, labelled, specific answer is exactly what he rewards.</div></div>
+
+  <h3>☀️ Answer shapes (a glance, not memorization)</h3>
+  <details class="tmpl"><summary>Definition ("What is X?")</summary><div class="body">X = [what kind of thing] that [key feature]; add one distinguishing detail; cite the author+year if one owns it. <em>Check:</em> ☐ core ☐ one specific ☐ author if any.</div></details>
+  <details class="tmpl"><summary>Compare / contrast</summary><div class="body">Name the axis first, then A / B on that same axis (label both), then the key difference in a line. <em>Check:</em> ☐ both labelled ☐ same axis ☐ difference.</div></details>
+  <details class="tmpl"><summary>Explain a framework / list</summary><div class="body">Count the parts, number them 1…N, one clause + one named specific each. <em>Check:</em> ☐ all N ☐ numbered ☐ a specific each.</div></details>
+  <details class="tmpl"><summary>Applied situation</summary><div class="body">Name the concept/model (+ author) it maps to, apply it to the given facts explicitly, state the outcome. <em>Check:</em> ☐ named concept ☐ mapped to facts ☐ outcome.</div></details>
+
+  <div class="box night"><span class="h">🌙 As you walk in</span>
+  <p>Breathe. You have the blocks. Count the parts, label them, name a specific — and let the rest go. That's enough, and so are you.</p></div>
+  <!-- LAST READ END -->
+</section>
+
 <div class="footer">
-  Built from the EDB222G class decks (11 / 18 / 25 Aug). Content verified against the source PDFs. Tags: <span style="color:var(--blue)">📌 applied</span> · <span style="color:var(--yellow)">⚠️ trap</span> · <span style="color:var(--green)">🌍 global note</span> · <span style="color:#e08a8a">⧉ outside your materials</span>. Grows with each new PPT.
+  Built from the EDB222G class decks. Content verified against the source PDFs. Tags: <span class="k">orange = a name to recall</span> · <span style="color:var(--blue)">📌 applied</span> · <span style="color:var(--yellow)">⚠️ trap</span> · <span style="color:var(--green)">🌍 global</span> · <span style="color:var(--moon)">🌙 calm</span> · <span style="color:#e08a8a">⧉ outside your materials</span>. Grows with each new PPT.
 </div>
 </div>
 
 <script>
 (function(){
-  var tabs = document.getElementById('tabs');
-  var btns = tabs.querySelectorAll('.tab-btn');
-  var panels = document.querySelectorAll('.panel');
+  var tabs=document.getElementById('tabs');
+  var btns=tabs.querySelectorAll('.tab-btn');
+  var panels=document.querySelectorAll('.panel');
   function show(id){
-    btns.forEach(function(b){b.classList.toggle('active', b.dataset.p===id);});
-    panels.forEach(function(p){p.classList.toggle('active', p.id===id);});
-    try{localStorage.setItem('dbgm_tab', id);}catch(e){}
+    btns.forEach(function(b){b.classList.toggle('active',b.dataset.p===id);});
+    panels.forEach(function(p){p.classList.toggle('active',p.id===id);});
+    try{localStorage.setItem('dbgm_tab',id);}catch(e){}
     window.scrollTo({top:0,behavior:'smooth'});
   }
   btns.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.p);});});
-  // restore last tab
-  try{var t=localStorage.getItem('dbgm_tab'); if(t&&document.getElementById(t)) show(t);}catch(e){}
-
-  // persist open/closed practice details
-  var ds = document.querySelectorAll('details.practice');
+  try{var t=localStorage.getItem('dbgm_tab');if(t&&document.getElementById(t))show(t);}catch(e){}
+  var ds=document.querySelectorAll('details.practice');
   ds.forEach(function(d,i){
     var key='dbgm_d_'+i;
-    try{if(localStorage.getItem(key)==='1') d.open=true;}catch(e){}
-    d.addEventListener('toggle',function(){try{localStorage.setItem(key, d.open?'1':'0');}catch(e){}});
+    try{if(localStorage.getItem(key)==='1')d.open=true;}catch(e){}
+    d.addEventListener('toggle',function(){try{localStorage.setItem(key,d.open?'1':'0');}catch(e){}});
   });
 })();
 </script>
