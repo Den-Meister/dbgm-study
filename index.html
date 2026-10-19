@@ -41,6 +41,8 @@ nav.tabs{position:sticky;top:0;z-index:20;background:rgba(20,17,15,.92);backdrop
 .tab-btn{flex:0 0 auto;background:transparent;border:1px solid transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;padding:9px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;transition:.15s}
 .tab-btn:hover{color:var(--ink)}
 .tab-btn.active{background:var(--card2);color:var(--terra-bright);border-color:var(--line)}
+.tab-btn.bg{opacity:.5}.tab-btn.bg.active{opacity:1}
+.tabdiv{align-self:center;color:var(--muted);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:0 8px;opacity:.7;white-space:nowrap}
 .panel{display:none;animation:fade .25s ease}
 .panel.active{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -122,12 +124,17 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
 
 <nav class="tabs" id="tabs">
   <button class="tab-btn active" data-p="start">Start Here</button>
-  <button class="tab-btn" data-p="a">A · Strategy Foundations</button>
-  <button class="tab-btn" data-p="b">B · International Trade</button>
-  <button class="tab-btn" data-p="c">C · Free Trade &amp; Protectionism</button>
-  <button class="tab-btn" data-p="d">D · Locating Production</button>
-  <button class="tab-btn" data-p="sim">Simulated Questions</button>
+  <button class="tab-btn" data-p="e">E · Finance</button>
+  <button class="tab-btn" data-p="f">F · Culture</button>
+  <button class="tab-btn" data-p="g">G · Expansion</button>
+  <button class="tab-btn" data-p="h">H · Theory &amp; M&amp;A</button>
+  <button class="tab-btn" data-p="sim">Cases (M2)</button>
   <button class="tab-btn" data-p="last">Last Read</button>
+  <span class="tabdiv">— background (M1) —</span>
+  <button class="tab-btn bg" data-p="a">Bg · Strategy</button>
+  <button class="tab-btn bg" data-p="b">Bg · Trade</button>
+  <button class="tab-btn bg" data-p="c">Bg · Blocs</button>
+  <button class="tab-btn bg" data-p="d">Bg · Production</button>
 </nav>
 
 <div class="wrap">
@@ -153,8 +160,19 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
   <div class="box trap"><span class="h">⚠️ The one trap</span>
   <p>His "kindly reminder" warns against exactly the answer that dumps everything without explaining. Write <mark>structured, labeled, specific</mark> — not a wall of everything you know.</p></div>
 
+  <div class="box applied"><span class="h">📌 Now focused on Midterm 2 (case-based)</span>
+  <p>Midterm 2 is <strong>case-based</strong> and covers <strong>Blocks E–H</strong>: <span class="k">E · International Finance</span>, <span class="k">F · Cultural Differences &amp; Negotiation</span>, <span class="k">G · Global Expansion &amp; Entry Modes</span>, and <span class="k">H · Internationalization Theory &amp; the M&amp;A model</span>. <strong>Blocks A–D (Midterm 1, now the "Bg ·" tabs)</strong> stay as a <em>supporting background read</em> — pull their frameworks only when a case needs a stronger argument.</p>
+  <p style="margin-top:8px"><strong>Your route:</strong> study <span class="k">E–H</span> → work the <span class="k">Cases (M2)</span> tab <em>by hand</em> → read <span class="k">Last Read</span> before you sleep.</p></div>
+
+  <h3>How to attack a case (M2 is case-based)</h3>
+  <div class="grid c3">
+    <div class="card"><span class="tag">1 · Read the ask</span><h5>What decision?</h5><p>Underline what the firm must decide (enter? which mode? which country? how to finance? how to negotiate?). Name the decision before theorising.</p></div>
+    <div class="card"><span class="tag">2 · Pick the lens(es)</span><h5>Which frameworks fit</h5><p>Match the case to blocks: entry → G's modes; country attractiveness → H's evaluation model; the deal/people → F's culture gap; money → E's finance. Most cases need 2–3.</p></div>
+    <div class="card"><span class="tag">3 · Apply + decide</span><h5>Name a specific, conclude</h5><p>Apply each lens to the case <em>facts</em>, name a concrete (a mode, a risk, a cultural trait), then give a clear recommendation. Structure beats a data dump.</p></div>
+  </div>
+
   <h3>How the tabs work</h3>
-  <p class="lead"><strong>A–D</strong> teach each block with produce-first practice. <strong>Simulated Questions</strong> = 25 exam-style prompts to answer cold. <strong>Last Read</strong> = a calm pass that settles your nerves by walking you back through what you already know.</p>
+  <p class="lead"><strong>E–H</strong> teach the Midterm-2 material with produce-first practice; <strong>A–D (M1)</strong> are the supporting background. <strong>Cases (M2)</strong> = case-based prompts that fuse the blocks — answer cold. <strong>Last Read</strong> = a calm pass that settles your nerves by walking you back through what you already know.</p>
   <p class="lead" style="font-size:.9rem;color:var(--muted)">Note: the ☐ score-checks inside answers are a study aid drawn from the material — not the professor's official mark scheme.</p>
 
   <h3>Course facts (from the syllabus)</h3>
@@ -549,43 +567,344 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
   </details>
 </section>
 
+<!-- ================= BLOCK E — INTERNATIONAL FINANCE ================= -->
+<section class="panel" id="e">
+  <div class="banner">
+    <div class="lab">Block E · Midterm 2</div>
+    <h2>International Finance</h2>
+    <p>How money moves between countries — exchange rates, financing sources, instruments, institutions and FDI — and how all of that differs from doing finance at home.</p>
+  </div>
+
+  <div class="def"><b>International finance</b> (a.k.a. international macroeconomics) — the study of monetary interactions between two or more countries, focusing on <b>foreign direct investment</b> and <b>currency exchange rates</b>. It uses mostly <em>macroeconomic</em> methods (international <em>trade</em> theory is more microeconomic). Key theories: the <span class="k">Mundell-Fleming model</span>, <span class="k">optimum currency area (OCA)</span> theory, and <span class="k">purchasing power parity (PPP)</span>.</div>
+
+  <h3>International vs. Domestic finance <span class="muted" style="font-size:.8rem">(the core contrast — know these)</span></h3>
+  <table>
+    <tr><th>Point of difference</th><th>International</th><th>Domestic</th></tr>
+    <tr><td><strong>Currency exposure</strong></td><td>Foreign-currency exposure impacts the transaction</td><td>No currency-exposure impact</td></tr>
+    <tr><td><strong>Macro environment</strong></td><td>Different economic &amp; political environment</td><td>Same economic &amp; political environment</td></tr>
+    <tr><td><strong>Tax &amp; regulation</strong></td><td>Different tax laws &amp; regulations</td><td>Same tax laws &amp; regulations</td></tr>
+    <tr><td><strong>Stakeholders</strong></td><td>Different cultures, beliefs, languages</td><td>Similar cultures, beliefs, languages</td></tr>
+    <tr><td><strong>FX instruments</strong></td><td>Knowledge of forwards, futures, options &amp; swaps required</td><td>Not required</td></tr>
+    <tr><td><strong>Reporting</strong></td><td>Books kept per <span class="k">GAAP</span> / accounting standards</td><td>No separate books needed</td></tr>
+    <tr><td><strong>Capital raising</strong></td><td>Ample options → selection is the challenge</td><td>Limited options → fewer challenges</td></tr>
+  </table>
+
+  <h3>Bretton Woods — the system behind it all</h3>
+  <div class="box applied"><span class="h">📌 Bretton Woods (1944)</span>
+  <p>Emerged from a 1944 conference of <strong>40 nations</strong> to standardize international monetary exchange and nurture post-WWII stability. Members settled cross-border bills in <strong>US-dollar-denominated bills exchangeable for gold</strong> ("as good as gold"); every member currency was pegged to the <span class="k">USD</span>. The <strong>US ended dollar-gold convertibility in 1971</strong> → currencies became floating. The <span class="k">IMF</span> and <span class="k">World Bank</span> are the "Bretton Woods twins."</p></div>
+
+  <h3>What moves exchange rates — 6 determinants</h3>
+  <div class="grid c3">
+    <div class="card"><h5>1 · Inflation differential</h5><p>Relative inflation between the two countries.</p></div>
+    <div class="card"><h5>2 · Interest-rate differentials</h5><p>Relative interest rates.</p></div>
+    <div class="card"><h5>3 · Current account deficits</h5><p>Balance of payments position.</p></div>
+    <div class="card"><h5>4 · Public debt</h5><p>Government indebtedness.</p></div>
+    <div class="card"><h5>5 · Terms of trade</h5><p>Export prices vs import prices.</p></div>
+    <div class="card"><h5>6 · Political stability &amp; economic performance</h5><p>Confidence in the economy.</p></div>
+  </div>
+  <div class="box applied"><span class="h">📌 Parity relationships</span>
+  <p><span class="k">Purchasing Power Parity (PPP)</span> — the price of an item is the same regardless of the currency used to buy it (the <em>law of one price</em>); it explains what drives exchange-rate changes over time. <span class="k">Interest Rate Parity</span> — the relationship between spot rates, forward rates and relative interest rates. A <strong>spot</strong> trade exchanges currency immediately; a <strong>forward</strong> contract agrees to exchange at a future date and set price.</p></div>
+
+  <h3>FX risk — the four risks to name</h3>
+  <div class="grid c2">
+    <div class="card"><span class="namebadge">Currency / transaction risk</span><p>Day-to-day exchange-rate swings on contracts to buy/sell at fixed prices in the short run.</p></div>
+    <div class="card"><span class="namebadge">Business risk</span><p>Long-run moves from unanticipated changes in relative economic conditions.</p></div>
+    <div class="card"><span class="namebadge">Translation risk</span><p>Foreign income must be translated back to USD for accounting even if not actually converted.</p></div>
+    <div class="card"><span class="namebadge">Political risk</span><p>Turmoil in one country hits stakeholders across the business.</p></div>
+  </div>
+  <p class="sowhat"><b>In an answer:</b> the two headline risks of international finance are <strong>foreign-exchange risk</strong> and <strong>political risk</strong>.</p>
+
+  <h3>The 5 international payment methods</h3>
+  <p><span class="pill">Cash in Advance</span><span class="pill">Letter of Credit</span><span class="pill">Documentary Collection</span><span class="pill">Open Account Terms</span><span class="pill">Consignment &amp; Trade Finance</span></p>
+  <p class="lead"><strong>Memory hook — buyer-risk ladder:</strong> <em>Cash in Advance</em> (safest for the seller) → <em>Letter of Credit</em> (bank guarantees) → <em>Documentary Collection</em> → <em>Open Account</em> (safest for the buyer) → <em>Consignment</em> (seller paid only after goods sell). Trust rises as you go down. <span style="color:#e08a8a;font-weight:700">⧉ Outside</span> <span class="muted" style="font-size:.85rem">— the slide only lists the five; this seller↔buyer risk ordering is a plain-language memory aid, not slide content.</span></p>
+
+  <h3>Sources of international financing — 3 categories</h3>
+  <div class="grid c3">
+    <div class="card"><span class="namebadge">A · Commercial banks</span><p>Provide foreign-currency loans &amp; advances worldwide; the backbone of trade/export-import finance.</p></div>
+    <div class="card"><span class="namebadge">B · Agencies &amp; development banks</span><p>Government-created to fund development on medium/long terms. Ex: EXIM Bank, European Investment Bank (EIB), EBRD, Asian Development Bank.</p></div>
+    <div class="card"><span class="namebadge">C · International capital market</span><p>The most-used source; raises funds via instruments like GDRs, ADRs, IDRs, FCCBs (below).</p></div>
+  </div>
+
+  <h4>Capital-market instruments (the depository receipts &amp; bonds)</h4>
+  <div class="grid c2">
+    <div class="card"><span class="namebadge">GDR — Global Depository Receipt</span><p>Shares issued in the home currency, lodged with a depository bank that issues receipts (denominated in <strong>USD</strong>) traded on foreign exchanges. Attracts global investors; holder gets dividends but <em>no voting rights</em>; convertible to shares after 45 days.</p></div>
+    <div class="card"><span class="namebadge">ADR — American Depository Receipt</span><p>Like a GDR but <strong>issued &amp; traded only in the USA</strong>, for US residents, listed only on US exchanges. Lets US investors hold overseas companies. Types: sponsored / unsponsored.</p></div>
+    <div class="card"><span class="namebadge">IDR — Indian Depository Receipt</span><p>The Indian version, denominated in rupees, available in Indian markets (regulator: SEBI).</p></div>
+    <div class="card"><span class="namebadge">FCCB — Foreign Currency Convertible Bond</span><p>Debt + equity hybrid: a bond (bought/sold in foreign markets, lower fixed interest) convertible into equity/depository receipts later; ~5-year redemption; dilutes ownership.</p></div>
+  </div>
+  <div class="box trap"><span class="h">⚠️ ADR vs GDR</span>
+  <p><strong>ADR</strong> = United States only. <strong>GDR</strong> = issued across (mainly European) markets / multiple countries. Both are negotiable certificates a depository bank issues against foreign shares; both help acquire resources &amp; invest across borders.</p></div>
+
+  <h4>International financial instruments — the families</h4>
+  <p class="lead">Beyond receipts: <strong>International bonds</strong> (foreign bonds &amp; euro bonds, global &amp; straight bonds, convertible &amp; cocktail bonds, floating-rate notes); <strong>short/medium-term</strong> (euro notes, mid-term euro notes, euro commercial paper); and the general toolkit — deposits, <span class="k">SDRs</span> (Special Drawing Rights, IMF reserve assets), borrowings, loans, shares/equity, derivatives (<strong>options, swaps</strong>), letters of guarantee &amp; credit, debentures/bonds.</p>
+
+  <h3>The Bretton Woods institutions</h3>
+  <div class="grid c2">
+    <div class="card"><span class="namebadge">IMF — International Monetary Fund</span><p>Promotes global economic growth &amp; financial stability, coordinates currency exchange and the balance of payments, reduces poverty. Voting is <strong>quota-weighted</strong> by economic size (not one-country-one-vote).</p></div>
+    <div class="card"><span class="namebadge">World Bank</span><p>A cooperative of <strong>189 member countries</strong>; provides <strong>development loans</strong> to developing countries to reduce poverty. Focus: long-term development (IMF = macro/financial stability).</p></div>
+  </div>
+  <p class="sowhat"><b>World Bank Group (5 arms):</b> IBRD · IDA · <span class="k">IFC</span> · MIGA · ICSID. Together with the IMF = the <span class="k">Bretton Woods twins</span>.</p>
+
+  <h3>Foreign Direct Investment (FDI)</h3>
+  <div class="def"><b>FDI</b> — cross-border investment where an investor in one economy establishes a <b>lasting interest</b> in, and a <b>significant degree of influence</b> over, an enterprise in another economy.</div>
+  <div class="grid c2">
+    <div class="card"><span class="namebadge">4 types</span><p><strong>Horizontal</strong> (same industry abroad — most common), <strong>Vertical</strong> (a supplier/buyer stage abroad), <strong>Conglomerate</strong> (unrelated business abroad), <strong>Platform</strong> (base to export to a third market).</p></div>
+    <div class="card"><span class="namebadge">Why it matters</span><p>Primary source of external capital &amp; revenue; transfers technology/skills, creates jobs, drives growth — things trade or portfolio investment alone can't.</p></div>
+  </div>
+
+  <h3>🧠 Recall check — cover the screen, produce these cold</h3>
+  <details class="practice"><summary><span class="qtype">Recall check</span>The named sets from this block — can you produce each without looking?</summary>
+    <div class="answer"><span class="lab">Answers</span>
+    <p><strong>Int'l vs domestic — key differences:</strong> currency exposure · different macro/political environment · different tax law · diverse stakeholders · needs FX instruments · GAAP reporting · more capital options.<br>
+    <strong>6 exchange-rate determinants:</strong> inflation differential · interest-rate differentials · current-account deficits · public debt · terms of trade · political stability/economic performance.<br>
+    <strong>5 payment methods:</strong> cash in advance · letter of credit · documentary collection · open account · consignment &amp; trade finance.<br>
+    <strong>3 financing sources:</strong> commercial banks · development banks/agencies · international capital market (GDR/ADR/IDR/FCCB).<br>
+    <strong>FDI 4 types:</strong> horizontal · vertical · conglomerate · platform. <strong>Bretton Woods twins:</strong> IMF + World Bank.</p></div>
+  </details>
+
+  <h3>Produce it — practice</h3>
+  <details class="practice"><summary><span class="qtype">Compare</span>How does international finance differ from domestic finance? Give the main points.</summary>
+    <div class="answer"><span class="lab">Model answer</span>
+    <p>The biggest difference is <span class="k">foreign-currency exposure</span>. Others: exposure to a different economic/political environment, different tax laws, stakeholders with different cultures/languages, the need to know FX instruments (forwards/futures/options/swaps), reporting under GAAP, and far more capital-raising options (which itself becomes a selection challenge). Domestic finance faces none of the currency/cross-border layers.</p>
+    <div class="check">☐ currency exposure first ☐ ≥3 more differences ☐ contrast stated</div></div>
+  </details>
+  <details class="practice"><summary><span class="qtype">Explain</span>What was the Bretton Woods system, and what happened in 1971?</summary>
+    <div class="answer"><span class="lab">Model answer</span>
+    <p>A 1944 system (40 nations) to standardize international monetary exchange after WWII: currencies pegged to the USD, which was itself convertible to gold ("as good as gold"), with bills settled in dollars. In <strong>1971 the US unilaterally ended dollar-to-gold convertibility</strong>, so currencies became floating. It gave rise to the IMF and World Bank (the Bretton Woods twins).</p>
+    <div class="check">☐ 1944 / post-WWII ☐ USD peg to gold ☐ 1971 end of convertibility ☐ floating after</div></div>
+  </details>
+  <details class="practice"><summary><span class="qtype">Apply</span>An exporter is unsure a new foreign buyer will pay. Which payment method is safest for the seller, and which favours the buyer?</summary>
+    <div class="answer"><span class="lab">Model answer</span>
+    <p>Safest for the <strong>seller</strong>: <span class="k">cash in advance</span> (paid before shipping); a <span class="k">letter of credit</span> is the next-safest (a bank guarantees payment against documents). Most favourable to the <strong>buyer</strong>: <span class="k">open account</span> (pay after delivery), or <span class="k">consignment</span> (the seller is paid only once the goods sell). The choice trades off trust vs. competitiveness.</p>
+    <div class="check">☐ cash in advance = seller-safe ☐ letter of credit noted ☐ open account/consignment = buyer-favour ☐ trust trade-off</div></div>
+  </details>
+</section>
+
+<!-- ================= BLOCK F — CULTURAL DIFFERENCES & NEGOTIATION ================= -->
+<section class="panel" id="f">
+  <div class="banner">
+    <div class="lab">Block F · Midterm 2</div>
+    <h2>Cultural Differences &amp; Negotiation</h2>
+    <p>Culture shapes how deals get done abroad. Misread it and even a strong company fails — read it, and you build the trust that closes the deal.</p>
+  </div>
+
+  <h3>Framework — how the cultural gap hits negotiation (10 dimensions)</h3>
+  <p class="lead">Each negotiating culture sits somewhere on ten sliders. Knowing where your counterpart sits is the whole game. Answer a "contrast two cultures" question down these rows.</p>
+  <table>
+    <tr><th>Dimension</th><th>One pole</th><th>Other pole</th></tr>
+    <tr><td><strong>Goal</strong></td><td>Contract</td><td>Relationship</td></tr>
+    <tr><td><strong>Attitudes</strong></td><td>Win / Lose</td><td>Win / Win</td></tr>
+    <tr><td><strong>Personal style</strong></td><td>Informal</td><td>Formal</td></tr>
+    <tr><td><strong>Communication</strong></td><td>Direct</td><td>Indirect</td></tr>
+    <tr><td><strong>Time sensitivity</strong></td><td>High</td><td>Low</td></tr>
+    <tr><td><strong>Emotionalism</strong></td><td>High</td><td>Low</td></tr>
+    <tr><td><strong>Agreement form</strong></td><td>Specific</td><td>General</td></tr>
+    <tr><td><strong>Agreement building</strong></td><td>Bottom-up</td><td>Top-down</td></tr>
+    <tr><td><strong>Team organization</strong></td><td>One leader</td><td>Consensus</td></tr>
+    <tr><td><strong>Risk-taking</strong></td><td>High</td><td>Low</td></tr>
+  </table>
+
+  <h3>Country playbooks (from the slides)</h3>
+  <div class="grid c2">
+    <div class="card"><span class="namebadge">🇨🇳 China</span><p><strong>Face</strong> (reputation — can be gained/lost) is central. High respect for <strong>authority &amp; hierarchy</strong> (enter/leave in rank order; let the Chinese leave first). Relationship &amp; <strong>trust</strong> first — expect long negotiations beyond deadlines. Communication is <strong>indirect</strong> ("I'll need more time" = no). Business cards with <strong>both hands</strong>; gifts tricky (bribery risk with officials); punctuality essential; stay composed.</p></div>
+    <div class="card"><span class="namebadge">🇮🇳 India</span><p><strong>Family-based</strong>: up to 70% of business is family-owned, the CEO plays a paternal role. <strong>Relationship before business</strong> — build a personal bond first (cricket, weather, meals); much business happens over food/hospitality. Time is <strong>flexible</strong> (9am may mean 9:15). People try to please → <strong>difficulty saying "no"</strong>, so be clear and direct.</p></div>
+    <div class="card"><span class="namebadge">🇩🇪 Germany</span><p><strong>Order &amp; punctuality</strong>: well-organized, agenda-driven, predictable. <strong>Formal</strong>: use titles (Herr/Frau + Doktor), strict work/private separation. <strong>Direct</strong>, logical, fact-based communication; little small talk; <strong>risk-averse</strong>; hierarchical — binding decisions at the <strong>top</strong>, slowly; deliver on promises. <em>(Walmart failed here by imposing US-style service.)</em></p></div>
+    <div class="card"><span class="namebadge">🇺🇸 USA</span><p>Strict business culture (expect hard work/perfection). <strong>Legal varies by state</strong> (IP, disputes); insurance is expensive. <strong>No humour/irony</strong> in meetings — can seem flippant. Strong <strong>regional variations</strong>; religion taken seriously; tight security post-9/11; little holiday time → impatient to get things done.</p></div>
+  </div>
+  <div class="box trap"><span class="h">⚠️ The core lesson</span>
+  <p>Don't assume home-culture norms travel. <span class="k">Walmart withdrew from Germany</span> partly because it ran US values (cordial service, baggers) that clashed with German culture. Adapting to the local culture can decide success or failure.</p></div>
+
+  <h3>🧠 Recall check — cover the screen, produce these cold</h3>
+  <details class="practice"><summary><span class="qtype">Recall check</span>Can you produce these cold?</summary>
+    <div class="answer"><span class="lab">Answers</span>
+    <p><strong>Negotiation gap — sample dimensions:</strong> goal (contract↔relationship) · attitude (win-lose↔win-win) · style (informal↔formal) · communication (direct↔indirect) · time (high↔low) · agreement (specific↔general) · team (one leader↔consensus) · risk (high↔low).<br>
+    <strong>China:</strong> face · hierarchy · relationship/trust · indirect · both-hands cards · patience.<br>
+    <strong>India:</strong> family-owned · relationship-first · hospitality/food · flexible time · hard to say no.<br>
+    <strong>Germany:</strong> organized · punctual · formal titles · direct · risk-averse · top-down decisions.<br>
+    <strong>USA:</strong> strict · state-varying law · no humour · regional variation · impatient.</p></div>
+  </details>
+
+  <h3>Produce it — practice</h3>
+  <details class="practice"><summary><span class="qtype">Compare</span>Contrast negotiating in China vs Germany on three dimensions.</summary>
+    <div class="answer"><span class="lab">Model answer</span>
+    <p><strong>Goal/relationship:</strong> China is relationship-first (trust before the deal, long courtship); Germany is more contract- and task-focused. <strong>Communication:</strong> China is indirect (avoids a blunt "no", protects face); Germany is direct, logical and fact-driven. <strong>Time &amp; decisions:</strong> China extends negotiations past deadlines and decides through hierarchy/consensus over time; Germany is punctual and agenda-bound but also decides top-down and slowly, disliking rushed decisions. Practical upshot: build the personal bond in China; bring a precise, well-prepared agenda in Germany.</p>
+    <div class="check">☐ 3 dimensions ☐ both cultures each ☐ a practical implication</div></div>
+  </details>
+  <details class="practice"><summary><span class="qtype">Apply</span>A US firm sends a blunt, fast-paced sales team to close a deal in India in one meeting. What goes wrong?</summary>
+    <div class="answer"><span class="lab">Model answer</span>
+    <p>India is <span class="k">relationship-first</span> and family-oriented: deals need a personal bond built over several meetings (meals, small talk), not a one-visit hard close. The US team's speed and directness skip the trust-building; Indian counterparts, who find it hard to say "no", may seem agreeable but won't commit. The fix: invest time in the relationship, be patient with flexible timing, and read the indirect cues.</p>
+    <div class="check">☐ relationship-first/family ☐ multiple meetings/trust ☐ hard-to-say-no cue ☐ the fix</div></div>
+  </details>
+</section>
+
+<!-- ================= BLOCK G — GLOBAL EXPANSION & ENTRY MODES ================= -->
+<section class="panel" id="g">
+  <div class="banner">
+    <div class="lab">Block G · Midterm 2</div>
+    <h2>Global Expansion &amp; Entry Modes</h2>
+    <p>Deciding to grow beyond home borders — why firms do it, what to weigh, and the seven ways in, each with its own trade-off between speed, control, cost and risk.</p>
+  </div>
+
+  <div class="def"><b>Overseas / global expansion</b> — a company's strategic decision to extend operations into foreign markets by establishing a physical or operational presence (sales offices, factories, service centres) to reach new customers, tap global talent and gain a competitive edge.</div>
+
+  <h3>Why firms expand — and when they should</h3>
+  <div class="grid c2">
+    <div class="card"><span class="namebadge">Why expand</span><p>Increased revenue (new segments) · cost reduction (cheaper production/labour) · risk mitigation (diversify beyond one market) · competitive pressure (keep pace) · access to resources/talent.</p></div>
+    <div class="card"><span class="namebadge">The 3 elements that must align</span><p><strong>1. Traction</strong> — a signal of market potential. <strong>2. Feasible profitability / interest.</strong> <strong>3. Ability to invest</strong> in the right level of <span class="k">localization</span>. "A signal to expand doesn't mean you should — weigh interest <em>and</em> capacity."</p></div>
+  </div>
+  <div class="box applied"><span class="h">📌 Considerations before entering</span>
+  <p><span class="k">Cultural sensitivity</span> (respect differences — ties to Block F) · <span class="k">legal compliance</span> (navigate local regulation) · <span class="k">resource allocation</span> (finance, people, tech) · <span class="k">adaptability</span> (flex the strategy as needed).</p></div>
+
+  <h3>Framework — the 7 international expansion methods</h3>
+  <table>
+    <tr><th>Method</th><th>What it is</th><th>Pros</th><th>Cons</th></tr>
+    <tr><td><strong>1 · Licensing &amp; franchising</strong></td><td>Grant another firm the right to use your IP / make your products for a fee or royalty.</td><td>Fast market access; quick revenue; paves future collaboration.</td><td>Complex cross-border legislation; third-party breach risk; high legal fees.</td></tr>
+    <tr><td><strong>2 · Exporting</strong></td><td>Make goods at home, sell them abroad.</td><td>Fast entry; fewer risks (made domestically).</td><td>Low control; high transport costs/tariffs.</td></tr>
+    <tr><td><strong>3 · Partnerships</strong></td><td>Team with a local firm that already has presence.</td><td>Low-risk; shared investment; counts as a local entity; local market knowledge.</td><td>Higher business cost; culture-clash/integration conflict.</td></tr>
+    <tr><td><strong>4 · M&amp;A</strong></td><td>Buy or merge with another company.</td><td>High-reward; instant infrastructure, distribution, brand, talent.</td><td>High risk; culture misalignment; slow, costly, legally heavy.</td></tr>
+    <tr><td><strong>5 · EOR (Employer of Record)</strong></td><td>A third party legally employs your workers abroad.</td><td>Full compliance; fast time-to-market; ongoing support.</td><td>Must vet the right EOR (due diligence).</td></tr>
+    <tr><td><strong>6 · Managing in-house</strong></td><td>Build your own mobility framework.</td><td>Full control &amp; flexibility.</td><td>Lots of time, research; costly.</td></tr>
+    <tr><td><strong>7 · Greenfield venture</strong></td><td>Build a wholly-owned subsidiary from scratch.</td><td>Highest control &amp; ownership; long-term; local knowledge.</td><td>High investment &amp; risk; slow; complex planning.</td></tr>
+  </table>
+  <div class="box trap"><span class="h">⚠️ The one axis that orders them</span>
+  <p>Trade <strong>control</strong> against <strong>cost/risk/commitment</strong>: exporting &amp; licensing = low control, low commitment, fast; greenfield &amp; M&amp;A = high control, high commitment, slow &amp; risky; partnerships/EOR sit in between. Pick by how much control you need vs. how much you can invest.</p></div>
+
+  <h3>Disadvantages &amp; risks of expanding</h3>
+  <div class="grid c2">
+    <div class="card"><h5>Set-up costs</h5><p>Often must form a local subsidiary/entity — lawyers, registration, and minimum capital (e.g. <span class="k">€25,000 in Germany</span>).</p></div>
+    <div class="card"><h5>Permanent-establishment tax risk</h5><p>A fixed place of business abroad can trigger corporate income tax there — an unexpected tax bill.</p></div>
+    <div class="card"><h5>Insufficient market understanding</h5><p>Without first-hand knowledge you can misjudge demand — <span class="k">Tesco</span> and <span class="k">Starbucks</span> are cited expansion failures.</p></div>
+    <div class="card"><h5>Non-compliance</h5><p>"You don't know what you don't know" — wrong tax/payroll/employment handling → fines and back-charges.</p></div>
+  </div>
+
+  <h3>Trade missions</h3>
+  <div class="def"><b>Trade mission</b> — an organized overseas trip (often a government or business delegation) to explore new markets, make contacts, and pursue export opportunities.</div>
+  <p class="lead"><strong>Purpose:</strong> market exploration · networking · export promotion · investment attraction. <strong>Types:</strong> <span class="k">outbound</span> (you travel out), <span class="k">inbound</span> (delegations visit you), <span class="k">certified (CTMs)</span>. <strong>Benefits:</strong> saves time/resources, lends credibility (government-facilitated), market insights, new business.</p>
+
+  <h3>🧠 Recall check — cover the screen, produce these cold</h3>
+  <details class="practice"><summary><span class="qtype">Recall check</span>Can you produce these cold?</summary>
+    <div class="answer"><span class="lab">Answers</span>
+    <p><strong>7 entry methods:</strong> licensing/franchising · exporting · partnerships · M&amp;A · EOR · in-house · greenfield.<br>
+    <strong>3 elements to align before expanding:</strong> traction · feasible profitability/interest · ability to invest in localization.<br>
+    <strong>4 considerations:</strong> cultural sensitivity · legal compliance · resource allocation · adaptability.<br>
+    <strong>Risks:</strong> set-up cost/min capital · permanent-establishment tax · poor market understanding (Tesco/Starbucks) · non-compliance.<br>
+    <strong>Trade-mission types:</strong> outbound · inbound · certified.</p></div>
+  </details>
+
+  <h3>Produce it — practice</h3>
+  <details class="practice"><summary><span class="qtype">Apply</span>A mid-size firm wants fast entry to a new market with minimal risk and investment, but worries about losing brand control. Which entry modes fit, and the trade-off?</summary>
+    <div class="answer"><span class="lab">Model answer</span>
+    <p><span class="k">Exporting</span> and <span class="k">licensing/franchising</span> give fast, low-risk, low-investment entry — but at the cost of <strong>low control</strong> (licensing also risks brand damage from the licensee). If brand control is paramount, a <span class="k">partnership</span> (shared risk, local knowledge, still a local entity) is the middle path; full control would require <span class="k">greenfield</span> or <span class="k">M&amp;A</span>, which contradict the "low investment/risk" goal. The trade-off is control vs. cost/risk — you can't maximize both.</p>
+    <div class="check">☐ names exporting/licensing ☐ control trade-off ☐ a middle option ☐ control-vs-cost logic</div></div>
+  </details>
+  <details class="practice"><summary><span class="qtype">Compare</span>Compare a greenfield venture with an acquisition (M&amp;A) as entry modes.</summary>
+    <div class="answer"><span class="lab">Model answer</span>
+    <p><strong>Greenfield</strong> = build a wholly-owned subsidiary from scratch: highest control and ownership, best long-term local knowledge, but huge investment, high risk and slow. <strong>M&amp;A</strong> = buy/merge with an existing firm: instant infrastructure, customer base and brand, a fast way in, but high-risk, expensive, legally heavy, and prone to <em>culture misalignment</em>. Both are high-control/high-commitment; greenfield builds, M&amp;A buys.</p>
+    <div class="check">☐ greenfield = build/control/slow ☐ M&amp;A = buy/fast/culture risk ☐ both high-commitment</div></div>
+  </details>
+</section>
+
+<!-- ================= BLOCK H — INTERNATIONALIZATION THEORY & M&A MODEL ================= -->
+<section class="panel" id="h">
+  <div class="banner">
+    <div class="lab">Block H · Midterm 2</div>
+    <h2>Internationalization Theory &amp; the M&amp;A Evaluation Model</h2>
+    <p>The deeper "why it's hard" layer: the professor's own country-evaluation model for M&amp;A, how going international reshapes strategy, and the two limits every cross-border manager hits.</p>
+  </div>
+
+  <h3>Prof. Moskovicz's M&amp;A country-evaluation model</h3>
+  <div class="box applied"><span class="h">📌 "A Worldwide Business Evaluation Model for M&amp;A" (Moskovicz, 2019)</span>
+  <p>His own paper. The idea: no single variable predicts whether an M&amp;A (or market entry) will succeed, so you <strong>list all relevant variables, rate each, and weight them by relevance</strong>. For a country, score each variable <strong>Low / Med / High</strong> and <strong>Positive / Neutral / Negative</strong>, times a <span class="k">Relevance</span> weight, and total it (the "National General Evaluation", done separately by sector).</p>
+  <p style="margin-top:6px"><strong>Variables include:</strong> clear/stable commercial rules · technological development · communications · infrastructure · justice-court independence · political stability · macroeconomic stability · corruption level · protective laws / import barriers · unemployment · local-currency stability · rigid labour rules · investment trend · incentives for foreign investment · free access to FX · dividend taxation/limits for foreign firms.</p></div>
+  <div class="box trap"><span class="h">⚠️ Why a weighted model (the authors)</span>
+  <p><span class="k">Haleblian (2009)</span>: the causes of M&amp;A failure are under-researched and need more study. <span class="k">King (2004)</span>: <strong>none</strong> of the strategic or financial variables alone predicts variance in post-acquisition performance. Conclusion: you need a holistic, relevance-weighted assessment — not one magic metric.</p></div>
+
+  <h3>How internationalization reshapes strategy</h3>
+  <table>
+    <tr><th>The Firm — resources &amp; capabilities</th><th>The Industry — environment</th></tr>
+    <tr>
+      <td>National resource availability (the <span class="k">theory of comparative advantage</span>); the impact of national context on how resources develop — <span class="k">Porter's national diamond</span>.</td>
+      <td>A wider market with more diverse customer preferences; <strong>more competitors</strong>; <strong>lower entry barriers</strong>; <strong>increased buyer power</strong>.</td>
+    </tr>
+  </table>
+  <p class="sowhat"><b>Point:</b> internationalization sits between firm and industry — it widens opportunity <em>and</em> intensifies competition.</p>
+
+  <h3>The two limits every cross-border manager hits</h3>
+  <div class="grid c2">
+    <div class="card"><span class="namebadge">Bounded rationality (Simon, 1982)</span><p>"Scarcity of mind": you never have complete information (especially about the future) <em>and</em> you can't fully process what you do have. For an IB strategist it bites in <strong>entry-mode choice</strong> and in the <strong>home-vs-host perspective gap</strong> — head office and subsidiary managers deem different information relevant (Verbeke &amp; Yuan, 2005).</p></div>
+    <div class="card"><span class="namebadge">Bounded reliability (Verbeke, 2009)</span><p>Not about <em>knowing</em> but about <em>doing</em>: actors fail to fully deliver on promises. Sources (Kano &amp; Verbeke, 2015): <strong>opportunism</strong> (self-interest, false promises) and <strong>benevolent preference reversal</strong> (good-faith promises abandoned as preferences change — e.g. subsidiary managers chasing local opportunities). Firms add <strong>safeguards/enforcement</strong> to detect and punish it.</p></div>
+  </div>
+  <div class="box applied"><span class="h">📌 FSAs — firm-specific advantages (Verbeke, 2009)</span>
+  <p>A firm builds on the broad <strong>location advantages (LAs)</strong> of its home country → a smaller subset of <span class="k">location-bound (LB)</span> FSAs → a still-smaller subset of <span class="k">non-location-bound (NLB)</span> FSAs that <em>can</em> transfer across borders. Bounded rationality &amp; reliability limit how well those NLB advantages transfer to the host country. Related: <strong>SSAs</strong> (subsidiary-specific) and <strong>ASAs</strong> (alliance-specific) advantages.</p></div>
+  <p class="muted" style="font-size:.85rem"><span style="color:#e08a8a;font-weight:700">⧉ Note</span> — the slides cite Kano &amp; Verbeke (2015) as giving a third source of bounded reliability; it wasn't legible in the scan, so only the two clearly-shown sources are listed above.</p>
+
+  <h3>🧠 Recall check — cover the screen, produce these cold</h3>
+  <details class="practice"><summary><span class="qtype">Recall check</span>Can you produce these cold?</summary>
+    <div class="answer"><span class="lab">Answers</span>
+    <p><strong>Moskovicz M&amp;A model:</strong> list variables → rate Low/Med/High + Positive/Neutral/Negative → weight by relevance → total (per sector). Because (King 2004) no single variable predicts post-acquisition performance.<br>
+    <strong>Internationalization — two sides:</strong> firm (comparative advantage, Porter's national diamond) vs industry (wider market, more competitors, lower entry barriers, more buyer power).<br>
+    <strong>Bounded rationality (Simon 1982):</strong> incomplete info + limited processing.<br>
+    <strong>Bounded reliability (Verbeke 2009):</strong> failure to keep promises — opportunism, benevolent preference reversal.<br>
+    <strong>FSAs:</strong> location-bound vs non-location-bound; built on home location advantages.</p></div>
+  </details>
+
+  <h3>Produce it — practice</h3>
+  <details class="practice"><summary><span class="qtype">Explain</span>What is Prof. Moskovicz's M&amp;A evaluation model, and why weight variables by relevance?</summary>
+    <div class="answer"><span class="lab">Model answer</span>
+    <p>It's a general model that <strong>lists every relevant variable</strong> affecting an M&amp;A/market entry, rates each (Low/Med/High and Positive/Neutral/Negative), and <strong>weights them by relevance</strong> to produce an overall score — ideally done per sector. The rationale: <span class="k">King (2004)</span> showed no single strategic or financial variable predicts post-acquisition performance, and <span class="k">Haleblian (2009)</span> noted M&amp;A-failure causes are under-studied — so a holistic, weighted assessment beats relying on one metric.</p>
+    <div class="check">☐ list + rate + weight by relevance ☐ per sector ☐ King (2004) no-single-predictor ☐ holistic rationale</div></div>
+  </details>
+  <details class="practice"><summary><span class="qtype">Compare</span>Distinguish bounded rationality from bounded reliability, with an example of each.</summary>
+    <div class="answer"><span class="lab">Model answer</span>
+    <p><span class="k">Bounded rationality</span> (Simon, 1982) is about <em>knowing/deciding</em>: incomplete information plus limited capacity to process it — e.g. choosing an entry mode with imperfect data about the foreign market. <span class="k">Bounded reliability</span> (Verbeke, 2009) is about <em>doing</em>: failing to fulfill promises — e.g. a subsidiary manager who agreed to implement HQ's plan but chases a local opportunity instead (benevolent preference reversal), or acts opportunistically. One is a thinking limit, the other a follow-through limit; firms answer rationality with information and reliability with safeguards.</p>
+    <div class="check">☐ rationality = info/processing ☐ reliability = promise-keeping ☐ an example each ☐ the contrast</div></div>
+  </details>
+</section>
+
 <!-- ================= SIMULATED QUESTIONS ================= -->
 <section class="panel" id="sim">
-  <!-- SIMULATED (CERTAMEN 1) START -->
+  <!-- SIMULATED (CERTAMEN 2) START -->
   <div class="banner">
-    <div class="lab">Mock · Blocks A–D</div>
-    <h2>Simulated Questions — 25</h2>
-    <p>Twenty-five prompts written to sound like his actual exam — open definitions, short essays, compare/contrast and applied situations, not flashcard recall. Answer each <strong>cold</strong> and out loud or on paper, then reveal. This set is re-scoped for each Certamen as new material arrives.</p>
+    <div class="lab">Mock · Blocks E–H · case-based</div>
+    <h2>Cases &amp; Questions — Midterm 2</h2>
+    <p>Midterm 2 is case-based, so these mix short concept prompts (finance, theory) with applied cases that fuse blocks — finance + culture + entry mode + the country model. Answer each <strong>cold</strong>, then reveal. Pull an A–D framework where it strengthens the argument.</p>
   </div>
-  <div class="box trap"><span class="h">⚠️ How to use</span><p>Cover the answer. Produce a full, <mark>labeled</mark> response before opening. If you can't name the author or the parts, that's the gap — go back to the block.</p></div>
+  <div class="box trap"><span class="h">⚠️ How to use</span><p><strong>Write your full answer by hand before revealing</strong> (the exam is handwritten — practice the real motion). The ☐ checks are a study aid, not the professor's rubric.</p></div>
 
-  <details class="practice"><summary><span class="qtype">Q1</span>What is strategy, and how does it differ from a tactic? Illustrate your answer.</summary><div class="answer"><span class="lab">Model</span><p>Strategy = the overall, long-term plan for deploying resources to reach a favourable position/objectives. Tactic = a specific, near-term maneuver within that plan. Illustration: deciding to expand into Asia is strategy; choosing which port and shipping schedule is tactics. Strategic decisions are important, resource-heavy, and hard to reverse.</p><div class="check">☐ both defined ☐ long-term vs near-term ☐ an example ☐ relationship</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q2</span>What is international business, and what is international business strategy?</summary><div class="answer"><span class="lab">Model</span><p>International business = any business operating across international borders (at minimum, selling goods/services between countries; other forms exist). International business strategy = plans guiding commercial transactions between entities in different countries — the policies of private firms (not governments) toward an overall goal such as increased profits.</p><div class="check">☐ IB across borders ☐ IB strategy = cross-border plans ☐ private not government ☐ a goal e.g. profit</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q3</span>Explain what strategic management is according to Dess et al. (2021), and what makes it more than everyday management.</summary><div class="answer"><span class="lab">Model</span><p>The analyses, decisions, and actions a firm undertakes to create and sustain competitive advantage. More than day-to-day management because it's about <em>why some firms outperform others</em>: choosing which industries to compete in and how to build advantages that are unique, valuable and hard to copy — sustainable (perdurable), not temporary.</p><div class="check">☐ author cited ☐ analyses/decisions/actions ☐ outperformance angle ☐ sustainable advantage</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q4</span>Why do firms need a strategy at all? Discuss the roles it plays.</summary><div class="answer"><span class="lab">Model</span><p>Three roles: (1) decision support — raises the quality of decisions; (2) coordination &amp; communication — creates consistency and unity across the firm; (3) target — lifts performance by setting high aspirations. Without it, decisions are inconsistent, uncoordinated and unambitious.</p><div class="check">☐ 3 roles labeled ☐ effect of each ☐ a "why it matters" line</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q5</span>Different authors define strategy differently. Present the views of Porter, Collis &amp; Rustag, and Grant, and note what they share.</summary><div class="answer"><span class="lab">Model</span><p>Porter (2000): a unique &amp; valuable position built on a different set of activities. Collis &amp; Rustag (2008): execs must state objective, scope and advantage simply — if they can't, nobody can. Grant (2010): strategy has evolved driven more by practical business needs than by theory. Shared: strategy is about deliberately positioning the firm to gain and hold advantage.</p><div class="check">☐ 3 authors + views ☐ correct pairing ☐ a common thread</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q6</span>What does it mean for a competitive advantage to be "sustainable" (perdurable), and why do managers care?</summary><div class="answer"><span class="lab">Model</span><p>A sustainable advantage is unique, valuable, and hard for rivals to copy or substitute, so it lasts over a long period rather than being competed away. Managers care because temporary advantages don't produce profits above the cost of capital for long — durability is what keeps a firm outperforming.</p><div class="check">☐ unique/valuable/hard to copy ☐ lasting vs temporary ☐ why it matters (outperformance)</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q7</span>Explain the difference between describing strategy as "positioning" and as "direction."</summary><div class="answer"><span class="lab">Model</span><p>Positioning = competing for the present: where we compete (product-market, geographic, vertical scope) and how we compete (basis of advantage). Direction = preparing for the future: what we want to become (vision), what we want to achieve (mission, goals) and how we'll get there (growth modes — organic, M&amp;A, alliances; capex/R&amp;D priorities).</p><div class="check">☐ positioning = present/where+how ☐ direction = future/vision+path ☐ contrast clear</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q8</span>Where does strategy actually "live" in a company, and why can an outsider only ever see part of it?</summary><div class="answer"><span class="lab">Model</span><p>In three places: the heads of the CEO/senior managers (ideal, rare); their articulations in speeches and documents (which never reveal confidential steps); and the decisions through which strategy is enacted. An outsider isn't at the decision table, sees only the disclosed pieces, and so reaches conclusions that are only partially right — his "social science, not exact science" point.</p><div class="check">☐ 3 places ☐ outsider = partial view ☐ conclusions partly right</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q9</span>What is international trade, and what explains the patterns we observe in it?</summary><div class="answer"><span class="lab">Model</span><p>International/foreign trade = the exchange of goods, services, capital and intellectual/personal rights between individuals of different states. Its patterns (the composition and volume of a country's trade, which shift over time) are explained by two theories: comparative advantage and increasing returns to scale.</p><div class="check">☐ definition ☐ two pattern theories ☐ patterns change over time</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q10</span>Compare the theories of absolute and comparative advantage. Why was Ricardo's insight so powerful?</summary><div class="answer"><span class="lab">Model</span><p>Smith (1776): a country exports what it produces most efficiently — trade benefits both, versus mercantilism. Ricardo: even if one country is better at <em>both</em> goods, both still gain by specializing where the <span class="k">opportunity cost</span> is lower. Ricardo's insight is powerful because it shows trade is mutually beneficial even without any absolute edge, and it predicts what each country will specialize in.</p><div class="check">☐ Smith vs Ricardo ☐ opportunity cost ☐ "even without absolute advantage" ☐ why powerful</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q11</span>How does the Heckscher-Ohlin model explain trade, and how does it differ from Ricardo?</summary><div class="answer"><span class="lab">Model</span><p>H-O locates advantage in <span class="k">factor endowments</span>: a country exports the good that uses intensively the factor it holds in relative abundance. It differs from Ricardo by explaining advantage through <em>what a country is endowed with</em> (capital, labor, land) rather than productivity differences alone.</p><div class="check">☐ factor endowments ☐ abundant factor used intensively ☐ contrast with Ricardo</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q12</span>Why do similar, developed countries trade so much with each other? What does Krugman's new trade theory add that comparative advantage cannot?</summary><div class="answer"><span class="lab">Model</span><p>Because they trade <span class="k">varieties</span> of the same kind of good (intra-industry trade), driven by economies of scale and consumers' "love for variety." Comparative advantage can't explain this — similar endowments imply little trade — so Krugman (1979) adds monopolistic competition + scale to explain the bulk of world trade, which is between similar developed economies.</p><div class="check">☐ intra-industry/varieties ☐ scale + love of variety ☐ what CA can't explain ☐ Krugman</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q13</span>What did Melitz (2003) bring to trade theory, and why does looking at individual firms matter?</summary><div class="answer"><span class="lab">Model</span><p>Melitz added micro-foundations: firms are heterogeneous in productive efficiency, and only the more productive ones choose to export. This matters because trade then reshapes industry dynamics — reallocating toward efficient firms — lifting aggregate productivity and affecting wages, which country-level models miss.</p><div class="check">☐ heterogeneous firms ☐ export decision ☐ productivity/wages effect</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q14</span>Blonigen &amp; Wilson (2012) summarize international trade in a few findings. What are they, and what do they tell us about how trade is changing?</summary><div class="answer"><span class="lab">Model</span><p>(1) Trade grows at a phenomenal rate; (2) it's dominated by a few countries who stay dominant; (3) product growth rates vary widely but relative market sizes stay stable; (4) over 40 years flows shifted from US–Europe to Asia–US. Together: trade is expanding and concentrated, but its centre of gravity has moved toward Asia.</p><div class="check">☐ all 4 ☐ Asia–US shift ☐ an interpretation</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q15</span>Who are the main actors in international trade, and what role does each play in shaping its rules?</summary><div class="answer"><span class="lab">Model</span><p>States (primary creators of international law; de jure &amp; de facto); corporations/multinationals (profit-driven, lobby for favourable rules); international organizations/NGOs (decide by vote, consensus or weighted voting); regional organizations; juridical/physical persons (individuals now hold rights &amp; duties); and arbitration associations (dispute settlement).</p><div class="check">☐ ≥4 actors ☐ a role each ☐ states as rule-makers</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q16</span>When is a commercial contract "international," and how are disputes typically resolved?</summary><div class="answer"><span class="lab">Model</span><p>It's international when two or more states conclude an agreement (e.g. the <span class="k">Vienna 1980</span> CISG; the <span class="k">Hague Principles 2015</span>). Parties may choose the governing law; if they don't, a court applies conflict-of-laws rules. Disputes are commonly resolved by <span class="k">arbitration</span>, favoured because foreign arbitral awards enjoy an almost universal enforcement regime.</p><div class="check">☐ "international" defined ☐ choice of law ☐ arbitration + why</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q17</span>Distinguish a free trade area, a customs union, and a single market. What is added at each step?</summary><div class="answer"><span class="lab">Model</span><p>Free trade area: no internal tariffs, no common external tariff (origin checks), own external deals. Customs union: adds a common external tariff and joint external deals. Single market: adds no border checks, free movement of goods <em>and people</em>, and common rules. The two added steps: a common external tariff, then free movement + shared regulation. <em>(Slide's 3-tier framing; the video's ladder splits the "single market" stage into Common Market + Economic Union.)</em></p><div class="check">☐ 3 defined ☐ common external tariff ☐ free movement of people ☐ "what's added" logic</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q18</span>What are the main benefits of free trade? Is free trade always the best policy?</summary><div class="answer"><span class="lab">Model</span><p>Benefits (Pettinger): comparative advantage, trade creation, more exports, economies of scale, more competition, growth (~7%/yr since 1945), use of surplus resources. Not always best: it can harm the environment and working conditions, enable IP theft and outsourcing; and protection is defensible for infant industries, jobs or security. Consensus still favours free trade — so protection should be targeted and temporary.</p><div class="check">☐ ≥4 benefits ☐ ≥2 caveats ☐ consensus ☐ a verdict</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q19</span>A government imposes item-by-item tariffs, blocks a foreign food on "hygiene" grounds, and gives exporters tax breaks. Identify each protectionist tool at work.</summary><div class="answer"><span class="lab">Model</span><p>Item-by-item tariffs = <span class="k">scientific tariffs</span>. The "hygiene" block = a <span class="k">product standard</span> (non-tariff barrier used to shut out imports and protect domestic producers). Tax breaks to exporters = an <span class="k">indirect government subsidy</span>, specifically an export subsidy. All three raise the price or scarcity of foreign goods to favour domestic firms.</p><div class="check">☐ scientific tariff ☐ product standard ☐ export/indirect subsidy ☐ common purpose</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q20</span>What is protectionism, what arguments are made for it, and why do most economists still favour free trade?</summary><div class="answer"><span class="lab">Model</span><p>Protectionism = using tools (tariffs, quotas, product standards, subsidies) to shield domestic producers. Arguments for: protect industry &amp; jobs, infant industries, national security, better balance of trade, defence against dumping/unfair competition. Economists still favour free trade because protection brings inefficiency, higher prices/inflation, less choice, weaker innovation and retaliation — net welfare loss. So protection is justified only narrowly and temporarily.</p><div class="check">☐ definition + tools ☐ ≥3 arguments for ☐ why economists favour free trade ☐ conclusion</div></div></details>
-  <h4>Block D — locating production facilities</h4>
-  <details class="practice"><summary><span class="qtype">Q21</span>Explain how a technology's fixed costs and minimum efficient scale shape whether a firm concentrates or disperses production.</summary><div class="answer"><span class="lab">Model</span><p>High fixed costs (e.g. a ~$5B semiconductor plant) force serving the world from one/few plants; low fixed costs let a firm produce in several. Minimum efficient scale = the output where plant-level scale economies are exhausted; if MES is large relative to global demand → centralize, if small → multiple plants (smartphones: MES ≈5M/yr vs &gt;1B demand → many sites). Both high fixed costs and high MES push toward concentration.</p><div class="check">☐ fixed costs high→central/low→disperse ☐ MES defined ☐ MES vs demand logic ☐ an example</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q22</span>What is a flexible manufacturing system, and how does it affect location and cost?</summary><div class="answer"><span class="lab">Model</span><p>A production method (machines + computer control) that easily adapts to changes in the type and quantity of product, enabling make-to-order customization. It raises efficiency and lowers unit cost (supporting concentrated production), but carries higher upfront equipment cost.</p><div class="check">☐ adapts type/quantity ☐ make-to-order ☐ efficiency/cost effect ☐ higher upfront cost</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q23</span>Refined sugar vs microchips — which should be produced near markets and which centrally? Justify with value-to-weight ratio.</summary><div class="answer"><span class="lab">Model</span><p>Microchips have a <strong>high value-to-weight ratio</strong> → transport is a tiny share of cost → produce centrally in the optimal location and serve the world. Refined sugar has a <strong>low value-to-weight ratio</strong> (cheap, heavy) → transport is a big share → produce near major markets to cut shipping costs.</p><div class="check">☐ microchips high V/W → central ☐ sugar low V/W → near markets ☐ transport-cost reasoning</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q24</span>When is concentrating production appropriate, and when is decentralizing? Give the key conditions for each.</summary><div class="answer"><span class="lab">Model</span><p><strong>Concentrate</strong> when: country cost differences are substantial, trade barriers low, location externalities favour certain sites, exchange rates stable, high fixed costs &amp; high MES (or FMS available), high value-to-weight, universal needs. <strong>Decentralize</strong> when the opposite holds: little cost difference, high trade barriers, unimportant externalities, volatile exchange rates, low fixed costs &amp; low MES with no FMS, low value-to-weight, and tastes differ between nations.</p><div class="check">☐ ≥4 concentrate conditions ☐ ≥4 decentralize conditions ☐ opposites logic</div></div></details>
-  <details class="practice"><summary><span class="qtype">Q25</span>A firm plans to move production abroad chasing low wages. What hidden costs should it weigh? Use an example.</summary><div class="answer"><span class="lab">Model</span><p>Hidden costs of a foreign location: high employee turnover, shoddy workmanship, poor product quality, low productivity. Example: <span class="k">Microsoft's Hyderabad</span> facility — chosen for ⅓ US wages, strong CS education, an existing IT cluster and to retain returning talent — yet suffered higher turnover than the US because local hires valued higher current pay over long-term incentives, hurting productivity. Low wages can be offset by these costs.</p><div class="check">☐ names hidden costs (turnover/quality/productivity) ☐ Microsoft Hyderabad ☐ wages-can-be-offset point</div></div></details>
-  <!-- SIMULATED (CERTAMEN 1) END -->
+  <h3>🧰 Case Toolkit — spot the trigger, grab the lens</h3>
+  <p class="lead">A case rarely says "use finance." It describes a <em>situation</em>. Match the situation to the block, then write the scaffold below. Most cases need 2–3 lenses.</p>
+  <table>
+    <tr><th>If the case is about…</th><th>Reach for…</th></tr>
+    <tr><td>Entering an unstable/risky country, or ranking countries</td><td><span class="k">H</span> · the M&amp;A country-evaluation model (relevance-weighted variables)</td></tr>
+    <tr><td>A cross-cultural deal, negotiation or people clash</td><td><span class="k">F</span> · the 10-dimension negotiation gap + country playbook</td></tr>
+    <tr><td>How to enter a market / set up abroad</td><td><span class="k">G</span> · the 7 entry modes (control vs cost/risk)</td></tr>
+    <tr><td>Money: funding, currency/FX, payment or investment</td><td><span class="k">E</span> · international finance (risks, payment methods, FDI, sources)</td></tr>
+    <tr><td>A merger or acquisition decision</td><td><span class="k">H</span> country model + <span class="k">G</span> M&amp;A pros/cons</td></tr>
+    <tr><td>Why a strong firm failed abroad</td><td><span class="k">F</span> culture + <span class="k">H</span> bounded rationality/reliability &amp; FSA transfer</td></tr>
+    <tr><td>Needing a sharper argument / background</td><td><span class="k">Bg (A–D)</span> · strategy, trade, protectionism, production</td></tr>
+  </table>
+  <div class="box applied"><span class="h">📌 The scaffold — write every case this way</span>
+  <p><strong>1. Frame</strong> — name the decision the firm must make, in one line. <strong>2. Lenses</strong> — pick the 2–3 blocks that fit (from the toolkit above). <strong>3. Apply</strong> — run each lens on the case's <em>actual facts</em>, naming a specific each time (a mode, a risk, a cultural trait, a variable). <strong>4. Recommend</strong> — a clear decision. <strong>5. Risks</strong> — the main risk or a contingency. Labelled parts + a named specific in each = the marks.</p></div>
+
+  <h4>Finance &amp; theory — short prompts</h4>
+  <details class="practice"><summary><span class="qtype">Q1</span>How does international finance differ from domestic finance?</summary><div class="answer"><span class="lab">Model</span><p>Above all, <span class="k">foreign-currency exposure</span>. Also: different economic/political environment, different tax laws, stakeholders of different cultures/languages, the need for FX instruments (forwards/futures/options/swaps), GAAP reporting, and far more capital-raising options (a selection challenge). Domestic finance has none of these cross-border layers.</p><div class="check">☐ currency exposure first ☐ ≥3 more ☐ contrast</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q2</span>What was Bretton Woods, and what changed in 1971?</summary><div class="answer"><span class="lab">Model</span><p>A 1944 system (40 nations) pegging currencies to the USD, itself convertible to gold ("as good as gold"), to stabilise post-WWII monetary exchange. In 1971 the US ended dollar-gold convertibility → floating currencies. It created the IMF and World Bank (the Bretton Woods twins).</p><div class="check">☐ 1944/40 nations ☐ USD–gold peg ☐ 1971 end ☐ floating</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q3</span>An exporter faces an unknown, risky foreign buyer. Which payment method, and why?</summary><div class="answer"><span class="lab">Model</span><p><span class="k">Cash in advance</span> is safest for the seller (paid before shipping); a <span class="k">letter of credit</span> is the strong fallback (a bank guarantees payment against documents). Open account and consignment favour the buyer and suit trusted relationships. With an unknown risky buyer, insist on cash in advance or an L/C.</p><div class="check">☐ cash in advance / L/C ☐ why (seller protection) ☐ contrast with open account</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q4</span>Distinguish ADR from GDR, and name the three sources of international financing.</summary><div class="answer"><span class="lab">Model</span><p><strong>ADR</strong> = depository receipt issued &amp; traded only in the USA (for US residents); <strong>GDR</strong> = issued across (mainly European)/multiple markets, denominated in USD. Both are negotiable receipts a bank issues against foreign shares. Three financing sources: <span class="k">commercial banks</span>, <span class="k">international agencies &amp; development banks</span> (EXIM, EIB, EBRD, ADB), and the <span class="k">international capital market</span> (GDR/ADR/IDR/FCCB).</p><div class="check">☐ ADR = US only ☐ GDR = multi/European ☐ 3 sources</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q5</span>Define FDI and give its four types.</summary><div class="answer"><span class="lab">Model</span><p><span class="k">FDI</span> = a cross-border investment giving a lasting interest and significant influence over a foreign enterprise. Types: <strong>horizontal</strong> (same industry abroad — most common), <strong>vertical</strong> (a supplier/buyer stage abroad), <strong>conglomerate</strong> (unrelated business abroad), <strong>platform</strong> (a base to export onward). It transfers technology/skills, creates jobs and capital.</p><div class="check">☐ lasting interest + influence ☐ all 4 types ☐ one example/benefit</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q6</span>Explain Prof. Moskovicz's M&amp;A country-evaluation model and why it weights by relevance.</summary><div class="answer"><span class="lab">Model</span><p>List every relevant variable (commercial rules, political/macro stability, corruption, infrastructure, FX access, incentives, labour rules…), rate each Low/Med/High and Positive/Neutral/Negative, and <strong>weight by relevance</strong> for an overall score (per sector). Rationale: <span class="k">King (2004)</span> — no single strategic/financial variable predicts post-acquisition performance; <span class="k">Haleblian (2009)</span> — failure causes are under-studied. So a holistic weighted assessment beats one metric.</p><div class="check">☐ list+rate+weight ☐ per sector ☐ King no-single-predictor</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q7</span>Distinguish bounded rationality from bounded reliability.</summary><div class="answer"><span class="lab">Model</span><p><span class="k">Bounded rationality</span> (Simon 1982) = limits on <em>knowing/deciding</em>: incomplete information + limited processing — bites in entry-mode choice and the home-vs-host perspective gap. <span class="k">Bounded reliability</span> (Verbeke 2009) = limits on <em>doing</em>: promises aren't fully kept — via opportunism or benevolent preference reversal. Firms answer rationality with information and reliability with safeguards.</p><div class="check">☐ rationality = know ☐ reliability = do ☐ an example/source each</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q8</span>What are FSAs, and what does location-bound vs non-location-bound mean?</summary><div class="answer"><span class="lab">Model</span><p><span class="k">FSAs</span> = firm-specific advantages, built on the home country's broad <strong>location advantages</strong>. A subset are <strong>location-bound (LB)</strong> — tied to home; a smaller subset are <strong>non-location-bound (NLB)</strong> — transferable across borders. Bounded rationality &amp; reliability limit how well NLB advantages actually transfer to a host country (Verbeke 2009).</p><div class="check">☐ FSA defined ☐ LB vs NLB ☐ transfer limited by bounded rationality/reliability</div></div></details>
+
+  <h4>Applied cases — fuse the blocks</h4>
+  <details class="practice"><summary><span class="qtype">Q9 · Case</span>A mid-size firm wants fast, low-risk, low-investment entry but fears losing brand control. Advise on entry mode.</summary><div class="answer"><span class="lab">Model</span><p><strong>Decision:</strong> entry mode. <strong>Lens (G):</strong> exporting and licensing give fast, low-risk, low-cost entry but <em>low control</em> (licensing also risks brand damage). The middle path is a <span class="k">partnership</span> — shared risk, local knowledge, still a local entity, more control than licensing. Full control (greenfield/M&amp;A) contradicts "low investment." <strong>Recommend:</strong> a partnership if brand control matters most; otherwise export first, license later. Trade-off: control vs cost/risk.</p><div class="check">☐ names the decision ☐ G modes + pros/cons ☐ control trade-off ☐ a recommendation</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q10 · Case</span>Your team will negotiate the same deal in China and in Germany. Prepare by contrasting the two on the negotiation dimensions.</summary><div class="answer"><span class="lab">Model</span><p><strong>Lens (F):</strong> <em>Goal</em> — China relationship-first vs Germany contract/task-focused. <em>Communication</em> — China indirect (protect face) vs Germany direct/logical. <em>Time &amp; decisions</em> — China extends past deadlines, decides via hierarchy/consensus; Germany punctual, agenda-bound, decides top-down but slowly. <strong>Recommend:</strong> in China build the personal bond and be patient; in Germany bring a precise, well-prepared, fact-based agenda. Don't impose home norms (Walmart's German failure).</p><div class="check">☐ ≥3 dimensions ☐ both countries each ☐ practical prep for each</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q11 · Case</span>A US firm sends a blunt team to close a deal in India in a single meeting. What goes wrong, and what should they do?</summary><div class="answer"><span class="lab">Model</span><p><strong>Lens (F):</strong> India is family-oriented and <span class="k">relationship-first</span> — deals need trust built over several meetings (meals, small talk), not a one-visit hard close. The US speed/directness skips trust-building; Indian counterparts (who find it hard to say "no") seem agreeable but won't commit. <strong>Fix:</strong> invest time in the relationship, accept flexible timing, read indirect cues, and build a personal bond before pushing the contract.</p><div class="check">☐ relationship-first/family ☐ multiple meetings ☐ hard-to-say-no ☐ the fix</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q12 · Case</span>A firm is choosing between two countries for an acquisition. How would you use Moskovicz's model to decide?</summary><div class="answer"><span class="lab">Model</span><p><strong>Lens (H):</strong> build the country evaluation per sector: score each variable — political &amp; macro stability, clear/stable commercial rules, corruption, justice independence, infrastructure, FX access, incentives for foreign investment, labour rigidity, dividend taxation — Low/Med/High &amp; Positive/Neutral/Negative, times its relevance weight; total each country. <strong>Recommend</strong> the higher weighted score, noting that (King 2004) no single variable decides it — it's the weighted whole. Add a cultural (F) and finance (E) check before committing.</p><div class="check">☐ variables named ☐ rate + relevance weight ☐ per sector/total ☐ no-single-predictor</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q13 · Case</span>Why do strong domestic firms (e.g. Walmart, Tesco, Starbucks) fail when they expand abroad?</summary><div class="answer"><span class="lab">Model</span><p><strong>Fuse F+G+H:</strong> they impose home-culture norms (Walmart's US service clashed with German culture) and <span class="k">misunderstand the foreign market</span> (Tesco, Starbucks). In theory terms: <em>bounded rationality</em> — incomplete information about the host market; and their <em>non-location-bound FSAs</em> don't transfer as assumed. Add weak localization and non-compliance risk. <strong>Lesson:</strong> adapt to local culture, invest in real market understanding, and don't assume home advantages travel.</p><div class="check">☐ culture (Walmart) ☐ market misunderstanding (Tesco/Starbucks) ☐ bounded rationality / FSA transfer ☐ lesson</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q14 · Capstone case</span>Company X wants to enter China by acquiring a local firm. Advise them, using the country model, the culture gap, entry-mode trade-offs, and a finance consideration.</summary><div class="answer"><span class="lab">Model</span><p><strong>Decision:</strong> whether/how to acquire in China. <strong>(H) Country model:</strong> score China per sector — large market &amp; investment incentives (positive) vs commercial-rule clarity, political/legal factors, FX access (weigh carefully). <strong>(G) Entry mode:</strong> M&amp;A gives instant infrastructure/brand but high risk, cost and <em>culture misalignment</em> — a partnership/JV may de-risk. <strong>(F) Culture:</strong> relationship-first, face, hierarchy, indirect communication, long negotiations — build trust, don't rush. <strong>(E) Finance:</strong> currency/FX exposure and how to fund (capital market, FDI); watch FX access and political risk. <strong>Recommend:</strong> proceed only if the weighted country score and cultural due diligence are strong; otherwise a JV first.</p><div class="check">☐ names decision ☐ uses all 4 lenses (E,F,G,H) ☐ applies to China facts ☐ clear recommendation</div></div></details>
+  <details class="practice"><summary><span class="qtype">Q15 · Case</span>Pick between greenfield, M&amp;A and partnership for a firm that has deep local knowledge and wants full long-term control. Justify.</summary><div class="answer"><span class="lab">Model</span><p><strong>Lens (G):</strong> with existing local knowledge, resources and a long-term horizon, a <span class="k">greenfield venture</span> fits best — highest control &amp; ownership, best local build, though slow and capital-heavy. <span class="k">M&amp;A</span> is faster but risks culture misalignment and overpaying; a <span class="k">partnership</span> gives less control than wanted. <strong>Recommend</strong> greenfield (control + long-term), using the firm's local knowledge to manage the risk greenfield usually carries.</p><div class="check">☐ chooses greenfield ☐ control/long-term reasoning ☐ rejects M&amp;A/partnership with reason</div></div></details>
+  <!-- SIMULATED (CERTAMEN 2) END -->
 </section>
 
 <!-- ================= LAST READ ================= -->
@@ -598,11 +917,16 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
   </div>
 
   <div class="box night"><span class="h">🌙 The night before — read, breathe, sleep</span>
-  <p>You've built the shape of all four blocks (A–D). Tonight isn't for new input — it's for letting it settle. Sleep is when memory consolidates, so the kindest thing you can do for tomorrow's score is rest.</p>
-  <p style="margin-top:8px"><strong>One move carries the whole exam:</strong> for every question — <span class="k">count the parts → label each → name a specific</span>. That single habit turns "I know this" into marks.</p></div>
+  <p>You've built the whole Midterm-2 picture (Blocks E–H), with A–D as backup. Tonight isn't for new input — it's for letting it settle. Sleep is when memory consolidates, so the kindest thing you can do for tomorrow's score is rest.</p>
+  <p style="margin-top:8px"><strong>One move carries a case:</strong> <span class="k">name the decision → pick your lenses → apply with a specific → recommend</span>. For a plain question: count the parts, label each, name a specific.</p></div>
 
   <h3>🌙☀️ Recall the spine — you already know this</h3>
-  <p class="lead">Read these three lines and notice how much comes back on its own. That recognition <em>is</em> the reassurance.</p>
+  <p class="lead">Read these and notice how much comes back on its own. That recognition <em>is</em> the reassurance. <strong>Midterm 2 focus (E–H):</strong></p>
+  <div class="box night"><span class="h">🌙 Block E — International Finance</span><p>You know it: int'l vs domestic finance (currency exposure first), Bretton Woods (1944 → 1971 float), the 6 exchange-rate determinants, the 5 payment methods, financing sources (banks, dev banks, capital market → GDR/ADR/IDR/FCCB), IMF + World Bank, FDI (horizontal/vertical/conglomerate/platform).</p></div>
+  <div class="box night"><span class="h">🌙 Block F — Culture &amp; Negotiation</span><p>The 10 negotiation dimensions (contract↔relationship, direct↔indirect, one leader↔consensus…) and the country playbooks — China (face, hierarchy, indirect), India (family, relationship-first), Germany (order, direct, risk-averse), USA (strict, no humour). Walmart failed in Germany for ignoring this.</p></div>
+  <div class="box night"><span class="h">🌙 Block G — Expansion &amp; Entry Modes</span><p>The 7 modes on one axis — control vs cost/risk: exporting &amp; licensing (fast, low control) → partnerships/EOR → greenfield &amp; M&amp;A (full control, high commitment). Plus the 3 align-first elements, the risks (Tesco/Starbucks), and trade missions.</p></div>
+  <div class="box night"><span class="h">🌙 Block H — Theory &amp; the M&amp;A model</span><p>Moskovicz's relevance-weighted country model (King 2004: no single predictor); internationalization = firm (comparative advantage, Porter's diamond) vs industry (more competitors, lower barriers); bounded rationality (knowing) vs bounded reliability (doing); FSAs location-bound vs non-location-bound.</p></div>
+  <p class="lead" style="color:var(--muted)">Supporting background (Midterm 1):</p>
   <div class="box night"><span class="h">🌙 Block A — Strategy</span><p>Strategy is the long-term plan for a favourable position (tactics are the moves within it). You know the authors — Porter, Collis &amp; Rustag, Grant — and Dess et al.: strategy = <strong>analyses, decisions, actions</strong>, aimed at a <em>sustainable</em> advantage. Positioning is the present; direction is the future.</p></div>
   <div class="box night"><span class="h">🌙 Block B — Trade</span><p>You know <em>why</em> countries trade: absolute advantage (Smith), comparative advantage (Ricardo, opportunity cost), factor endowments (Heckscher-Ohlin), varieties &amp; scale (Krugman), and firms (Melitz). Plus Blonigen &amp; Wilson's shift from US–Europe to Asia–US.</p></div>
   <div class="box night"><span class="h">🌙 Block C — Free trade &amp; protection</span><p>You know the bloc ladder: preferential → free trade area → customs union (+ common wall) → common market (+ resources move) → economic union (+ policy/currency) → full integration. You know free trade's benefits and the protection toolkit: tariffs, quotas, product standards, subsidies — and dumping.</p></div>
@@ -613,6 +937,7 @@ mark{background:#3a2a12;color:#ffe0a8;padding:0 3px;border-radius:3px}
   <div class="tstep"><div class="n">1</div><div><strong>Settle.</strong> Breathe. You've recalled the spine above — the material is there. Nerves are just adrenaline, not a knowledge gap.</div></div>
   <div class="tstep"><div class="n">2</div><div><strong>Read every question first</strong> (2–3 min), mark the command word (<em>define / explain / compare / apply</em>), split time by marks, keep the last few minutes to check each answer has labels and a named specific.</div></div>
   <div class="tstep"><div class="n">3</div><div><strong>Skeleton before prose.</strong> Count the parts, label each, name a specific. Don't dump everything — a tight, labelled, specific answer is exactly what he rewards.</div></div>
+  <div class="tstep"><div class="n">4</div><div><strong>For a case:</strong> name the decision → pick 2–3 lenses (E finance · F culture · G entry mode · H country model) → apply each to the <em>case facts</em> → give a clear recommendation. Pull an A–D framework if it strengthens the argument.</div></div>
 
   <h3>☀️ Answer shapes (a glance, not memorization)</h3>
   <details class="tmpl"><summary>Definition ("What is X?")</summary><div class="body">X = [what kind of thing] that [key feature]; add one distinguishing detail; cite the author+year if one owns it. <em>Check:</em> ☐ core ☐ one specific ☐ author if any.</div></details>
